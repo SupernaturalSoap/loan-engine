@@ -1,0 +1,924 @@
+13/3/2023, 6:52:59 pm info: Listening on port '9090'
+13/3/2023, 6:53:09 pm info: Listening on port '9090'
+13/3/2023, 6:58:31 pm error: Error in processing request - SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at parse (/Users/vinod/event-engine/node_modules/body-parser/lib/types/json.js:89:19)
+    at /Users/vinod/event-engine/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    at invokeCallback (/Users/vinod/event-engine/node_modules/raw-body/index.js:231:16)
+    at done (/Users/vinod/event-engine/node_modules/raw-body/index.js:220:7)
+    at IncomingMessage.onEnd (/Users/vinod/event-engine/node_modules/raw-body/index.js:280:7)
+    at IncomingMessage.emit (node:events:513:28)
+    at endReadableNT (node:internal/streams/readable:1359:12)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  [stack]: 'SyntaxError: Unexpected end of JSON input\n' +
+    '    at JSON.parse (<anonymous>)\n' +
+    '    at parse (/Users/vinod/event-engine/node_modules/body-parser/lib/types/json.js:89:19)\n' +
+    '    at /Users/vinod/event-engine/node_modules/body-parser/lib/read.js:128:18\n' +
+    '    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)\n' +
+    '    at invokeCallback (/Users/vinod/event-engine/node_modules/raw-body/index.js:231:16)\n' +
+    '    at done (/Users/vinod/event-engine/node_modules/raw-body/index.js:220:7)\n' +
+    '    at IncomingMessage.onEnd (/Users/vinod/event-engine/node_modules/raw-body/index.js:280:7)\n' +
+    '    at IncomingMessage.emit (node:events:513:28)\n' +
+    '    at endReadableNT (node:internal/streams/readable:1359:12)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:82:21)',
+  [message]: 'Unexpected end of JSON input',
+  expose: true,
+  statusCode: 400,
+  status: 400,
+  body: '{\n' +
+    '                    "name": "Order Viewed",\n' +
+    '                    "description": "Whose order viewed",\n' +
+    '                    "rules": {\n' +
+    '                        "$schema": "http://json-schema.org/draft-07/schema#",\n' +
+    '                        "type": "object",\n' +
+    '                        "properties": {\n' +
+    '                           "type": "object",\n' +
+    '                           "properties": {\n' +
+    '                             "product": {\n' +
+    '                                "type": ["string"]\n' +
+    '                              },\n' +
+    '                              "price": {\n' +
+    '                                "type": ["number"]\n' +
+    '                              },\n' +
+    '                              "currency": {\n' +
+    '                                "type": ["string"]\n' +
+    '                              }\n' +
+    '                          }, \n' +
+    '                          "required": [\n' +
+    '                            "product",\n' +
+    '                            "price",\n' +
+    '                            "currency"\n' +
+    '                         ]\n' +
+    '                    }\n' +
+    '                }',
+  type: 'entity.parse.failed'
+}
+13/3/2023, 6:59:10 pm debug: Processing request '{"method":"POST","url":"/event","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"2becd886-05b3-4639-866d-7495424fdd3a","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"639"},"body":{"name":"Order Viewed","description":"Whose order viewed","rules":{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"type":"object","properties":{"product":{"type":["string"]},"price":{"type":["number"]},"currency":{"type":["string"]}},"required":["product","price","currency"]}}}}'
+13/3/2023, 7:00:14 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"12802dc7-e2b2-4e7a-9f8f-ad6c697a6c62","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"639"},"body":{"name":"Order Viewed","description":"Whose order viewed","rules":{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"type":"object","properties":{"product":{"type":["string"]},"price":{"type":["number"]},"currency":{"type":["string"]}},"required":["product","price","currency"]}}}}'
+13/3/2023, 7:00:14 pm error: Error in processing request - Error: INVALID_EVENT
+    at EventSvc.<anonymous> (/Users/vinod/event-engine/src/svc/event-svc.ts:17:19)
+    at step (/Users/vinod/event-engine/src/svc/event-svc.ts:44:23)
+    at Object.next (/Users/vinod/event-engine/src/svc/event-svc.ts:25:53)
+    at /Users/vinod/event-engine/src/svc/event-svc.ts:19:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/vinod/event-engine/src/svc/event-svc.ts:15:12)
+    at EventSvc.create (/Users/vinod/event-engine/src/svc/event-svc.ts:61:16)
+    at /Users/vinod/event-engine/src/routes/event-router.ts:23:38
+    at step (/Users/vinod/event-engine/src/routes/event-router.ts:33:23)
+    at Object.next (/Users/vinod/event-engine/src/routes/event-router.ts:14:53) {
+  [stack]: 'Error: INVALID_EVENT\n' +
+    '    at EventSvc.<anonymous> (/Users/vinod/event-engine/src/svc/event-svc.ts:17:19)\n' +
+    '    at step (/Users/vinod/event-engine/src/svc/event-svc.ts:44:23)\n' +
+    '    at Object.next (/Users/vinod/event-engine/src/svc/event-svc.ts:25:53)\n' +
+    '    at /Users/vinod/event-engine/src/svc/event-svc.ts:19:71\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at __awaiter (/Users/vinod/event-engine/src/svc/event-svc.ts:15:12)\n' +
+    '    at EventSvc.create (/Users/vinod/event-engine/src/svc/event-svc.ts:61:16)\n' +
+    '    at /Users/vinod/event-engine/src/routes/event-router.ts:23:38\n' +
+    '    at step (/Users/vinod/event-engine/src/routes/event-router.ts:33:23)\n' +
+    '    at Object.next (/Users/vinod/event-engine/src/routes/event-router.ts:14:53)',
+  [message]: 'INVALID_EVENT'
+}
+13/3/2023, 7:02:20 pm info: Listening on port '9090'
+13/3/2023, 7:02:24 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"b9588eda-dad0-4d0b-bd41-54e6832d1e74","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"643"},"body":{"name":"Order Viewed","description":"Whose order viewed","rules":{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"type":"object","properties":{"product":{"type":["string"]},"price":{"type":["number"]},"currency":{"type":["string"]}},"required":["product","price","currency"]}}}}'
+13/3/2023, 7:02:24 pm debug: Upserting with query { _id: '4880604d-b058-484a-870f-43cbbf18734c' } for record {
+  name: 'Order Viewed',
+  description: 'Whose order viewed',
+  rules: {
+    '$schema': 'http://json-schema.org/draft-07/schema#',
+    type: 'object',
+    properties: {
+      type: 'object',
+      properties: {
+        product: { type: [Array] },
+        price: { type: [Array] },
+        currency: { type: [Array] }
+      },
+      required: [ 'product', 'price', 'currency', [length]: 3 ]
+    }
+  },
+  createdAt: '2023-03-13T13:32:24.394Z',
+  updatedAt: '2023-03-13T13:32:24.394Z'
+}
+13/3/2023, 7:02:24 pm info: Event created with ID 4880604d-b058-484a-870f-43cbbf18734c
+13/3/2023, 7:09:32 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"3d1103e1-0e34-4134-b874-348f160727f2","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"751"},"body":{"name":"Order Viewed","description":"Whose order viewed","rules":{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"type":"object","properties":{"product":{"type":["string"]},"price":{"type":["number"]},"category":{"type":["string"]},"currency":{"type":["string"]}},"required":["product","price","category","currency"]}}}}'
+13/3/2023, 7:09:32 pm debug: Upserting with query { _id: '0a0ce469-4cea-465c-96a4-63b13257089c' } for record {
+  name: 'Order Viewed',
+  description: 'Whose order viewed',
+  rules: {
+    '$schema': 'http://json-schema.org/draft-07/schema#',
+    type: 'object',
+    properties: {
+      type: 'object',
+      properties: {
+        product: { type: [Array] },
+        price: { type: [Array] },
+        category: { type: [Array] },
+        currency: { type: [Array] }
+      },
+      required: [ 'product', 'price', 'category', 'currency', [length]: 4 ]
+    }
+  },
+  createdAt: '2023-03-13T13:39:32.928Z',
+  updatedAt: '2023-03-13T13:39:32.928Z'
+}
+13/3/2023, 7:09:32 pm info: Event created with ID 0a0ce469-4cea-465c-96a4-63b13257089c
+13/3/2023, 7:09:56 pm debug: Processing request '{"method":"POST","url":"/api/trackingPlan","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"f37def8d-fa56-4944-8a74-c9e3e4aa42ed","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"223"},"body":{"tracking_plan":{"display_name":"Tracking Plan","description":"This Is Tracking Plan One","events":["4880604d-b058-484a-870f-43cbbf18734c","0a0ce469-4cea-465c-96a4-63b13257089c"]}}}'
+13/3/2023, 7:09:56 pm error: Error in processing request - Error: INVALID_TRACKING_PLAN
+    at TrackingPlanSvc.<anonymous> (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:17:19)
+    at step (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:44:23)
+    at Object.next (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:25:53)
+    at /Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:19:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:15:12)
+    at TrackingPlanSvc.create (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:61:16)
+    at /Users/vinod/event-engine/src/routes/trackingPlan-router.ts:24:45
+    at step (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:33:23)
+    at Object.next (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:14:53) {
+  [stack]: 'Error: INVALID_TRACKING_PLAN\n' +
+    '    at TrackingPlanSvc.<anonymous> (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:17:19)\n' +
+    '    at step (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:44:23)\n' +
+    '    at Object.next (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:25:53)\n' +
+    '    at /Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:19:71\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at __awaiter (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:15:12)\n' +
+    '    at TrackingPlanSvc.create (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:61:16)\n' +
+    '    at /Users/vinod/event-engine/src/routes/trackingPlan-router.ts:24:45\n' +
+    '    at step (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:33:23)\n' +
+    '    at Object.next (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:14:53)',
+  [message]: 'INVALID_TRACKING_PLAN'
+}
+13/3/2023, 7:10:27 pm debug: Processing request '{"method":"POST","url":"/api/trackingPlan","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"05e5a279-a5ae-44af-b403-96fe37a99568","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"185"},"body":{"display_name":"Tracking Plan","description":"This Is Tracking Plan One","events":["4880604d-b058-484a-870f-43cbbf18734c","0a0ce469-4cea-465c-96a4-63b13257089c"]}}'
+13/3/2023, 7:10:27 pm error: Error in processing request - Error: INVALID_TRACKING_PLAN
+    at TrackingPlanSvc.<anonymous> (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:17:19)
+    at step (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:44:23)
+    at Object.next (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:25:53)
+    at /Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:19:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:15:12)
+    at TrackingPlanSvc.create (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:61:16)
+    at /Users/vinod/event-engine/src/routes/trackingPlan-router.ts:24:45
+    at step (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:33:23)
+    at Object.next (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:14:53) {
+  [stack]: 'Error: INVALID_TRACKING_PLAN\n' +
+    '    at TrackingPlanSvc.<anonymous> (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:17:19)\n' +
+    '    at step (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:44:23)\n' +
+    '    at Object.next (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:25:53)\n' +
+    '    at /Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:19:71\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at __awaiter (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:15:12)\n' +
+    '    at TrackingPlanSvc.create (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:61:16)\n' +
+    '    at /Users/vinod/event-engine/src/routes/trackingPlan-router.ts:24:45\n' +
+    '    at step (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:33:23)\n' +
+    '    at Object.next (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:14:53)',
+  [message]: 'INVALID_TRACKING_PLAN'
+}
+13/3/2023, 7:11:19 pm info: Listening on port '9090'
+13/3/2023, 7:11:28 pm debug: Processing request '{"method":"POST","url":"/api/trackingPlan","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"511ddf51-9e3a-4f33-ba00-22c73c20f465","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"185"},"body":{"display_name":"Tracking Plan","description":"This Is Tracking Plan One","events":["4880604d-b058-484a-870f-43cbbf18734c","0a0ce469-4cea-465c-96a4-63b13257089c"]}}'
+13/3/2023, 7:11:28 pm debug: Upserting with query { _id: 'b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0' } for record {
+  display_name: 'Tracking Plan',
+  description: 'This Is Tracking Plan One',
+  events: [
+    '4880604d-b058-484a-870f-43cbbf18734c',
+    '0a0ce469-4cea-465c-96a4-63b13257089c',
+    [length]: 2
+  ],
+  createdAt: '2023-03-13T13:41:28.788Z',
+  updatedAt: '2023-03-13T13:41:28.788Z'
+}
+13/3/2023, 7:11:28 pm info: Tracking plan created with ID b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0
+13/3/2023, 7:13:52 pm debug: Processing request '{"method":"GET","url":"/api/trackingPlan/","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"85267ebc-699a-4e0b-ad7d-eaf1f46fa5ba","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+13/3/2023, 7:13:52 pm debug: Finding all with skip 0 and limit 100
+13/3/2023, 7:13:52 pm debug: Finding with query {}
+13/3/2023, 7:14:47 pm debug: Processing request '{"method":"GET","url":"/api/trackingPlan/b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"8522a0ea-505d-4354-b537-8742bf252e98","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+13/3/2023, 7:14:47 pm debug: Finding by ID { _id: 'b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0' }
+13/3/2023, 7:14:47 pm debug: Finding with query {"_id":"b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0"}
+13/3/2023, 7:15:41 pm debug: Processing request '{"method":"GET","url":"/api/event","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"39e0990c-9605-43ed-9179-f025e761fe46","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+13/3/2023, 7:15:41 pm debug: Finding all with skip 0 and limit 100
+13/3/2023, 7:15:41 pm debug: Finding with query {}
+13/3/2023, 7:16:25 pm debug: Processing request '{"method":"GET","url":"/api/event/0a0ce469-4cea-465c-96a4-63b13257089c","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"a6fea9f6-5b88-4fb5-b206-856297afd7df","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+13/3/2023, 7:16:25 pm debug: Finding by ID { _id: '0a0ce469-4cea-465c-96a4-63b13257089c' }
+13/3/2023, 7:16:25 pm debug: Finding with query {"_id":"0a0ce469-4cea-465c-96a4-63b13257089c"}
+13/3/2023, 7:16:28 pm debug: Processing request '{"method":"GET","url":"/api/event/0a0ce469-4cea-465c-96a4-63b13257089","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"3491c8e0-3c49-4d4e-ad45-4dc7bae75aa6","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+13/3/2023, 7:16:28 pm debug: Finding by ID { _id: '0a0ce469-4cea-465c-96a4-63b13257089' }
+13/3/2023, 7:16:28 pm debug: Finding with query {"_id":"0a0ce469-4cea-465c-96a4-63b13257089"}
+13/3/2023, 7:16:35 pm debug: Processing request '{"method":"GET","url":"/api/event/0a0ce469-4cea-465c-96a4-63b13257089c","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"f8f12a23-6340-4e13-8d68-ae771c3a8b91","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+13/3/2023, 7:16:35 pm debug: Finding by ID { _id: '0a0ce469-4cea-465c-96a4-63b13257089c' }
+13/3/2023, 7:16:35 pm debug: Finding with query {"_id":"0a0ce469-4cea-465c-96a4-63b13257089c"}
+13/3/2023, 7:17:05 pm info: Listening on port '9090'
+13/3/2023, 7:17:46 pm info: Listening on port '9090'
+13/3/2023, 7:18:01 pm info: Listening on port '9090'
+13/3/2023, 7:18:15 pm info: Listening on port '9090'
+13/3/2023, 7:18:18 pm debug: Processing request '{"method":"GET","url":"/api/event/0a0ce469-4cea-465c-96a4-63b13257089","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"0bec2b67-a9cc-4af4-96ee-de0cddde621e","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+13/3/2023, 7:18:18 pm debug: Finding by ID { _id: '0a0ce469-4cea-465c-96a4-63b13257089' }
+13/3/2023, 7:18:18 pm debug: Finding with query {"_id":"0a0ce469-4cea-465c-96a4-63b13257089"}
+13/3/2023, 7:18:23 pm debug: Processing request '{"method":"GET","url":"/api/event/0a0ce469-4cea-465c-96a4-63b13257089c","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"716aa1ec-7973-4b3b-ba6d-2312ac6b1f0e","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+13/3/2023, 7:18:23 pm debug: Finding by ID { _id: '0a0ce469-4cea-465c-96a4-63b13257089c' }
+13/3/2023, 7:18:23 pm debug: Finding with query {"_id":"0a0ce469-4cea-465c-96a4-63b13257089c"}
+13/3/2023, 7:19:37 pm debug: Processing request '{"method":"GET","url":"/api/event","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"7ccb913e-07e0-4aec-b41f-b12bae2c1c70","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+13/3/2023, 7:19:37 pm debug: Finding all with skip 0 and limit 100
+13/3/2023, 7:19:37 pm debug: Finding with query {}
+13/3/2023, 7:19:44 pm debug: Processing request '{"method":"GET","url":"/api/event","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"b1a29f2a-9e96-4877-af97-7f1b34fa1d62","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+13/3/2023, 7:19:44 pm debug: Finding all with skip 0 and limit 100
+13/3/2023, 7:19:44 pm debug: Finding with query {}
+13/3/2023, 7:19:54 pm debug: Processing request '{"method":"GET","url":"/api/event/4880604d-b058-484a-870f-43cbbf18734c","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"8c657471-5ab8-43b2-9940-f7378e9d55b8","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+13/3/2023, 7:19:54 pm debug: Finding by ID { _id: '4880604d-b058-484a-870f-43cbbf18734c' }
+13/3/2023, 7:19:54 pm debug: Finding with query {"_id":"4880604d-b058-484a-870f-43cbbf18734c"}
+13/3/2023, 7:22:17 pm debug: Processing request '{"method":"PATCH","url":"/api/event","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"82e5de21-7af3-4f3c-a45b-c82c45c4a234","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"806"},"body":{"id":"0a0ce469-4cea-465c-96a4-63b13257089c","name":"Order Viewed Two","description":"Whose order viewed","rules":{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"type":"object","properties":{"product":{"type":["string"]},"price":{"type":["number"]},"category":{"type":["string"]},"currency":{"type":["string"]}},"required":["product","price","category","currency"]}}}}'
+13/3/2023, 7:22:17 pm debug: Finding by ID { _id: '0a0ce469-4cea-465c-96a4-63b13257089c' }
+13/3/2023, 7:22:17 pm debug: Finding with query {"_id":"0a0ce469-4cea-465c-96a4-63b13257089c"}
+13/3/2023, 7:22:17 pm debug: Upserting with query { _id: '0a0ce469-4cea-465c-96a4-63b13257089c' } for record {
+  createdAt: '2023-03-13T13:39:32.928Z',
+  description: 'Whose order viewed',
+  name: 'Order Viewed',
+  rules: undefined,
+  updatedAt: '2023-03-13T13:52:17.343Z'
+}
+13/3/2023, 7:22:17 pm info: [trackingPlan] Tracking plan updated with name: Order Viewed and id: 0a0ce469-4cea-465c-96a4-63b13257089c
+13/3/2023, 7:23:09 pm debug: Processing request '{"method":"GET","url":"/api/event","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"1231040a-890d-4554-b0de-ead9dc193a77","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+13/3/2023, 7:23:09 pm debug: Finding all with skip 0 and limit 100
+13/3/2023, 7:23:09 pm debug: Finding with query {}
+13/3/2023, 7:25:13 pm info: Listening on port '9090'
+13/3/2023, 7:25:51 pm info: Listening on port '9090'
+13/3/2023, 7:27:06 pm info: Listening on port '9090'
+13/3/2023, 7:27:17 pm info: Listening on port '9090'
+13/3/2023, 7:27:26 pm info: Listening on port '9090'
+13/3/2023, 7:27:31 pm debug: Processing request '{"method":"PATCH","url":"/api/event","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"95d093a3-d37c-4ac9-b374-d3c445e8b4fb","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"806"},"body":{"id":"0a0ce469-4cea-465c-96a4-63b13257089c","name":"Order Viewed Two","description":"Whose order viewed","rules":{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"type":"object","properties":{"product":{"type":["string"]},"price":{"type":["number"]},"category":{"type":["string"]},"currency":{"type":["string"]}},"required":["product","price","category","currency"]}}}}'
+13/3/2023, 7:27:31 pm debug: Finding by ID { _id: '0a0ce469-4cea-465c-96a4-63b13257089c' }
+13/3/2023, 7:27:31 pm debug: Finding with query {"_id":"0a0ce469-4cea-465c-96a4-63b13257089c"}
+13/3/2023, 7:27:31 pm debug: Upserting with query { _id: '0a0ce469-4cea-465c-96a4-63b13257089c' } for record {
+  createdAt: '2023-03-13T13:39:32.928Z',
+  description: 'Whose order viewed',
+  name: 'Order Viewed Two',
+  rules: {
+    '$schema': 'http://json-schema.org/draft-07/schema#',
+    type: 'object',
+    properties: {
+      type: 'object',
+      properties: {
+        product: { type: [Array] },
+        price: { type: [Array] },
+        category: { type: [Array] },
+        currency: { type: [Array] }
+      },
+      required: [ 'product', 'price', 'category', 'currency', [length]: 4 ]
+    }
+  },
+  updatedAt: '2023-03-13T13:57:31.204Z'
+}
+13/3/2023, 7:27:31 pm info: [trackingPlan] Tracking plan updated with name: Order Viewed and id: 0a0ce469-4cea-465c-96a4-63b13257089c
+13/3/2023, 7:27:36 pm debug: Processing request '{"method":"PATCH","url":"/api/event","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"223edaed-fdf6-43f5-b841-8e7e580f76b2","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"806"},"body":{"id":"0a0ce469-4cea-465c-96a4-63b13257089c","name":"Order Viewed Two","description":"Whose order viewed","rules":{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"type":"object","properties":{"product":{"type":["string"]},"price":{"type":["number"]},"category":{"type":["string"]},"currency":{"type":["string"]}},"required":["product","price","category","currency"]}}}}'
+13/3/2023, 7:27:36 pm debug: Finding by ID { _id: '0a0ce469-4cea-465c-96a4-63b13257089c' }
+13/3/2023, 7:27:36 pm debug: Finding with query {"_id":"0a0ce469-4cea-465c-96a4-63b13257089c"}
+13/3/2023, 7:27:36 pm debug: Upserting with query { _id: '0a0ce469-4cea-465c-96a4-63b13257089c' } for record {
+  createdAt: '2023-03-13T13:39:32.928Z',
+  description: 'Whose order viewed',
+  name: 'Order Viewed Two',
+  rules: {
+    '$schema': 'http://json-schema.org/draft-07/schema#',
+    type: 'object',
+    properties: {
+      type: 'object',
+      properties: {
+        product: { type: [Array] },
+        price: { type: [Array] },
+        category: { type: [Array] },
+        currency: { type: [Array] }
+      },
+      required: [ 'product', 'price', 'category', 'currency', [length]: 4 ]
+    }
+  },
+  updatedAt: '2023-03-13T13:57:36.350Z'
+}
+13/3/2023, 7:27:36 pm info: [trackingPlan] Tracking plan updated with name: Order Viewed Two and id: 0a0ce469-4cea-465c-96a4-63b13257089c
+13/3/2023, 7:29:09 pm info: Listening on port '9090'
+13/3/2023, 7:29:16 pm info: Listening on port '9090'
+13/3/2023, 7:29:34 pm info: Listening on port '9090'
+13/3/2023, 7:29:40 pm info: Listening on port '9090'
+13/3/2023, 7:29:49 pm info: Listening on port '9090'
+13/3/2023, 7:31:41 pm debug: Processing request '{"method":"PATCH","url":"/api/trackingPlan","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"42fa98a5-463a-4b6e-b462-42c2da2d07d0","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"237"},"body":{"id":"b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0","display_name":"Tracking Plan","description":"This Is First Tracking Plan","events":["4880604d-b058-484a-870f-43cbbf18734c","0a0ce469-4cea-465c-96a4-63b13257089c"]}}'
+13/3/2023, 7:31:41 pm debug: Finding by ID { _id: 'b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0' }
+13/3/2023, 7:31:41 pm debug: Finding with query {"_id":"b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0"}
+13/3/2023, 7:31:41 pm debug: Upserting with query { _id: 'b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0' } for record {
+  createdAt: '2023-03-13T13:41:28.788Z',
+  description: 'This Is First Tracking Plan',
+  display_name: 'Tracking Plan',
+  events: [
+    '4880604d-b058-484a-870f-43cbbf18734c',
+    '0a0ce469-4cea-465c-96a4-63b13257089c',
+    [length]: 2
+  ],
+  updatedAt: '2023-03-13T14:01:41.623Z'
+}
+13/3/2023, 7:31:41 pm info: Tracking plan updated with name: Tracking Plan and id: b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0
+13/3/2023, 7:32:13 pm debug: Processing request '{"method":"PATCH","url":"/api/trackingPlan","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"0c2e3355-8883-4a6e-9d9c-a9d93ad707e9","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"196"},"body":{"id":"b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0","display_name":"Tracking Plan","description":"This Is First Tracking Plan","events":["4880604d-b058-484a-870f-43cbbf18734c"]}}'
+13/3/2023, 7:32:13 pm debug: Finding by ID { _id: 'b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0' }
+13/3/2023, 7:32:13 pm debug: Finding with query {"_id":"b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0"}
+13/3/2023, 7:32:13 pm debug: Upserting with query { _id: 'b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0' } for record {
+  createdAt: '2023-03-13T13:41:28.788Z',
+  description: 'This Is First Tracking Plan',
+  display_name: 'Tracking Plan',
+  events: [ '4880604d-b058-484a-870f-43cbbf18734c', [length]: 1 ],
+  updatedAt: '2023-03-13T14:02:13.441Z'
+}
+13/3/2023, 7:32:13 pm info: Tracking plan updated with name: Tracking Plan and id: b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0
+13/3/2023, 7:32:29 pm debug: Processing request '{"method":"PATCH","url":"/api/trackingPlan","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"ac66eded-b60c-4b42-8d75-390f80a4905b","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"237"},"body":{"id":"b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0","display_name":"Tracking Plan","description":"This Is First Tracking Plan","events":["4880604d-b058-484a-870f-43cbbf18734c","0a0ce469-4cea-465c-96a4-63b13257089c"]}}'
+13/3/2023, 7:32:29 pm debug: Finding by ID { _id: 'b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0' }
+13/3/2023, 7:32:29 pm debug: Finding with query {"_id":"b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0"}
+13/3/2023, 7:32:29 pm debug: Upserting with query { _id: 'b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0' } for record {
+  createdAt: '2023-03-13T13:41:28.788Z',
+  description: 'This Is First Tracking Plan',
+  display_name: 'Tracking Plan',
+  events: [
+    '4880604d-b058-484a-870f-43cbbf18734c',
+    '0a0ce469-4cea-465c-96a4-63b13257089c',
+    [length]: 2
+  ],
+  updatedAt: '2023-03-13T14:02:29.069Z'
+}
+13/3/2023, 7:32:29 pm info: Tracking plan updated with name: Tracking Plan and id: b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0
+13/3/2023, 7:32:42 pm debug: Processing request '{"method":"GET","url":"/api/trackingPlan","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"c20c8c9a-d097-4c58-b7eb-3056b1adffe5","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+13/3/2023, 7:32:42 pm debug: Finding all with skip 0 and limit 100
+13/3/2023, 7:32:42 pm debug: Finding with query {}
+14/3/2023, 4:02:23 pm info: Listening on port '9090'
+14/3/2023, 4:04:02 pm debug: Processing request '{"method":"GET","url":"/api/trackingPlan","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"73bd359f-b913-4b27-b8da-d3e67e4e3afd","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+14/3/2023, 4:04:02 pm debug: Finding all with skip 0 and limit 100
+14/3/2023, 4:04:02 pm debug: Finding with query {}
+14/3/2023, 4:13:06 pm info: Listening on port '9090'
+14/3/2023, 4:13:30 pm info: Listening on port '9090'
+14/3/2023, 4:15:42 pm info: Listening on port '9090'
+14/3/2023, 4:17:01 pm info: Listening on port '9090'
+14/3/2023, 4:17:13 pm info: Listening on port '9090'
+14/3/2023, 4:17:29 pm debug: Processing request '{"method":"GET","url":"/api/trackingPlan","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"ce66c913-ff18-4570-acb3-f3bba7b854fd","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+14/3/2023, 4:17:29 pm debug: Finding all with skip 0 and limit 100
+14/3/2023, 4:17:29 pm debug: Finding with query {}
+14/3/2023, 4:17:39 pm debug: Processing request '{"method":"GET","url":"/api/trackingPlan/b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"c0c7a171-78fe-48ff-b117-747ef29ce0c1","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+14/3/2023, 4:17:39 pm debug: Finding by ID { _id: 'b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0' }
+14/3/2023, 4:17:39 pm debug: Finding with query {"_id":"b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0"}
+14/3/2023, 4:17:39 pm debug: Finding by ID { _id: '4880604d-b058-484a-870f-43cbbf18734c' }
+14/3/2023, 4:17:39 pm debug: Finding with query {"_id":"4880604d-b058-484a-870f-43cbbf18734c"}
+14/3/2023, 4:17:39 pm debug: Finding by ID { _id: '0a0ce469-4cea-465c-96a4-63b13257089c' }
+14/3/2023, 4:17:39 pm debug: Finding with query {"_id":"0a0ce469-4cea-465c-96a4-63b13257089c"}
+14/3/2023, 4:17:57 pm debug: Processing request '{"method":"GET","url":"/api/event","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"49390ee7-ad3f-45d9-8a10-712eacf61803","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+14/3/2023, 4:17:57 pm debug: Finding all with skip 0 and limit 100
+14/3/2023, 4:17:57 pm debug: Finding with query {}
+14/3/2023, 4:18:17 pm debug: Processing request '{"method":"GET","url":"/api/event/4880604d-b058-484a-870f-43cbbf18734c","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"64800af6-ccfc-4b64-93fb-c99a1517463a","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+14/3/2023, 4:18:17 pm debug: Finding by ID { _id: '4880604d-b058-484a-870f-43cbbf18734c' }
+14/3/2023, 4:18:17 pm debug: Finding with query {"_id":"4880604d-b058-484a-870f-43cbbf18734c"}
+14/3/2023, 4:19:30 pm info: Listening on port '9090'
+14/3/2023, 4:19:39 pm debug: Processing request '{"method":"GET","url":"/api/trackingPlan/b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"66d55b3d-4f23-4e76-9063-27a5758d14a3","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+14/3/2023, 4:19:39 pm debug: Finding by ID { _id: 'b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0' }
+14/3/2023, 4:19:39 pm debug: Finding with query {"_id":"b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0"}
+14/3/2023, 4:19:39 pm debug: Finding by ID { _id: '4880604d-b058-484a-870f-43cbbf18734c' }
+14/3/2023, 4:19:39 pm debug: Finding with query {"_id":"4880604d-b058-484a-870f-43cbbf18734c"}
+14/3/2023, 4:19:39 pm debug: Finding by ID { _id: '0a0ce469-4cea-465c-96a4-63b13257089c' }
+14/3/2023, 4:19:39 pm debug: Finding with query {"_id":"0a0ce469-4cea-465c-96a4-63b13257089c"}
+14/3/2023, 4:20:37 pm info: Listening on port '9090'
+14/3/2023, 4:21:28 pm info: Listening on port '9090'
+14/3/2023, 4:21:51 pm info: Listening on port '9090'
+14/3/2023, 4:25:45 pm info: Listening on port '9090'
+14/3/2023, 4:26:12 pm info: Listening on port '9090'
+14/3/2023, 4:26:13 pm info: Listening on port '9090'
+14/3/2023, 4:26:19 pm debug: Processing request '{"method":"GET","url":"/api/trackingPlan/b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"8fcb3878-274c-430b-a38e-545fc54bfb91","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+14/3/2023, 4:26:19 pm debug: Finding by ID { _id: 'b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0' }
+14/3/2023, 4:26:19 pm debug: Finding with query {"_id":"b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0"}
+14/3/2023, 4:26:19 pm debug: Finding by ID { _id: '4880604d-b058-484a-870f-43cbbf18734c' }
+14/3/2023, 4:26:19 pm debug: Finding with query {"_id":"4880604d-b058-484a-870f-43cbbf18734c"}
+14/3/2023, 4:26:19 pm debug: Finding by ID { _id: '0a0ce469-4cea-465c-96a4-63b13257089c' }
+14/3/2023, 4:26:19 pm debug: Finding with query {"_id":"0a0ce469-4cea-465c-96a4-63b13257089c"}
+14/3/2023, 4:28:30 pm info: Listening on port '9090'
+14/3/2023, 4:28:37 pm debug: Processing request '{"method":"GET","url":"/api/trackingPlan/b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"2cbd4dfc-8460-44ea-8940-f5cbeff4bde5","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+14/3/2023, 4:28:37 pm debug: Finding by ID { _id: 'b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0' }
+14/3/2023, 4:28:37 pm debug: Finding with query {"_id":"b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0"}
+14/3/2023, 4:28:37 pm debug: Finding by ID { _id: '4880604d-b058-484a-870f-43cbbf18734c' }
+14/3/2023, 4:28:37 pm debug: Finding with query {"_id":"4880604d-b058-484a-870f-43cbbf18734c"}
+14/3/2023, 4:28:37 pm debug: Finding by ID { _id: '0a0ce469-4cea-465c-96a4-63b13257089c' }
+14/3/2023, 4:28:37 pm debug: Finding with query {"_id":"0a0ce469-4cea-465c-96a4-63b13257089c"}
+14/3/2023, 4:29:08 pm info: Listening on port '9090'
+14/3/2023, 4:29:16 pm debug: Processing request '{"method":"GET","url":"/api/trackingPlan/b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"312c74b7-fcf8-492d-a44d-f9f46f804903","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+14/3/2023, 4:29:16 pm debug: Finding by ID { _id: 'b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0' }
+14/3/2023, 4:29:16 pm debug: Finding with query {"_id":"b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0"}
+14/3/2023, 4:29:16 pm debug: Finding by ID { _id: '4880604d-b058-484a-870f-43cbbf18734c' }
+14/3/2023, 4:29:16 pm debug: Finding with query {"_id":"4880604d-b058-484a-870f-43cbbf18734c"}
+14/3/2023, 4:29:16 pm debug: Finding by ID { _id: '0a0ce469-4cea-465c-96a4-63b13257089c' }
+14/3/2023, 4:29:16 pm debug: Finding with query {"_id":"0a0ce469-4cea-465c-96a4-63b13257089c"}
+14/3/2023, 4:31:25 pm info: Listening on port '9090'
+14/3/2023, 4:31:28 pm info: Listening on port '9090'
+14/3/2023, 4:31:40 pm debug: Processing request '{"method":"GET","url":"/api/trackingPlan/b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"7e30a9e0-5725-499e-8c6c-63c65cfeac36","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+14/3/2023, 4:31:40 pm debug: Finding by ID { _id: 'b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0' }
+14/3/2023, 4:31:40 pm debug: Finding with query {"_id":"b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0"}
+14/3/2023, 4:31:40 pm debug: Finding by ID { _id: '4880604d-b058-484a-870f-43cbbf18734c' }
+14/3/2023, 4:31:40 pm debug: Finding with query {"_id":"4880604d-b058-484a-870f-43cbbf18734c"}
+14/3/2023, 4:31:40 pm debug: Finding by ID { _id: '0a0ce469-4cea-465c-96a4-63b13257089c' }
+14/3/2023, 4:31:40 pm debug: Finding with query {"_id":"0a0ce469-4cea-465c-96a4-63b13257089c"}
+14/3/2023, 4:31:57 pm info: Listening on port '9090'
+14/3/2023, 4:32:11 pm debug: Processing request '{"method":"GET","url":"/api/trackingPlan/b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"1e348477-6fe4-42fd-8431-524b8aa3cece","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+14/3/2023, 4:32:11 pm debug: Finding by ID { _id: 'b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0' }
+14/3/2023, 4:32:11 pm debug: Finding with query {"_id":"b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0"}
+14/3/2023, 4:32:11 pm debug: Finding by ID { _id: '4880604d-b058-484a-870f-43cbbf18734c' }
+14/3/2023, 4:32:11 pm debug: Finding with query {"_id":"4880604d-b058-484a-870f-43cbbf18734c"}
+14/3/2023, 4:32:11 pm debug: Finding by ID { _id: '0a0ce469-4cea-465c-96a4-63b13257089c' }
+14/3/2023, 4:32:11 pm debug: Finding with query {"_id":"0a0ce469-4cea-465c-96a4-63b13257089c"}
+14/3/2023, 4:32:42 pm info: Listening on port '9090'
+14/3/2023, 4:32:50 pm info: Listening on port '9090'
+14/3/2023, 4:33:04 pm info: Listening on port '9090'
+14/3/2023, 4:33:17 pm debug: Processing request '{"method":"GET","url":"/api/trackingPlan/b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"ccd5a06d-402a-4618-8ff3-f3c88a6b3606","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+14/3/2023, 4:33:17 pm debug: Finding by ID { _id: 'b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0' }
+14/3/2023, 4:33:17 pm debug: Finding with query {"_id":"b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0"}
+14/3/2023, 4:33:17 pm debug: Finding by ID { _id: '4880604d-b058-484a-870f-43cbbf18734c' }
+14/3/2023, 4:33:17 pm debug: Finding with query {"_id":"4880604d-b058-484a-870f-43cbbf18734c"}
+14/3/2023, 4:33:17 pm debug: Finding by ID { _id: '0a0ce469-4cea-465c-96a4-63b13257089c' }
+14/3/2023, 4:33:17 pm debug: Finding with query {"_id":"0a0ce469-4cea-465c-96a4-63b13257089c"}
+14/3/2023, 4:36:05 pm info: Listening on port '9090'
+14/3/2023, 4:36:17 pm debug: Processing request '{"method":"GET","url":"/api/trackingPlan/b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"90c70be5-78f4-4953-be7a-518d7209b6d2","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+14/3/2023, 4:36:17 pm debug: Finding by ID { _id: 'b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0' }
+14/3/2023, 4:36:17 pm debug: Finding with query {"_id":"b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0"}
+14/3/2023, 4:36:17 pm debug: Finding by ID { _id: '4880604d-b058-484a-870f-43cbbf18734c' }
+14/3/2023, 4:36:17 pm debug: Finding with query {"_id":"4880604d-b058-484a-870f-43cbbf18734c"}
+14/3/2023, 4:36:17 pm debug: Finding by ID { _id: '0a0ce469-4cea-465c-96a4-63b13257089c' }
+14/3/2023, 4:36:17 pm debug: Finding with query {"_id":"0a0ce469-4cea-465c-96a4-63b13257089c"}
+14/3/2023, 4:36:31 pm info: Listening on port '9090'
+14/3/2023, 4:36:32 pm info: Listening on port '9090'
+14/3/2023, 4:36:35 pm debug: Processing request '{"method":"GET","url":"/api/trackingPlan/b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"f3532f0f-1f95-4a3c-9ffd-e51cad44db61","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+14/3/2023, 4:36:35 pm debug: Finding by ID { _id: 'b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0' }
+14/3/2023, 4:36:35 pm debug: Finding with query {"_id":"b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0"}
+14/3/2023, 4:36:35 pm debug: Finding by ID { _id: '4880604d-b058-484a-870f-43cbbf18734c' }
+14/3/2023, 4:36:35 pm debug: Finding with query {"_id":"4880604d-b058-484a-870f-43cbbf18734c"}
+14/3/2023, 4:36:35 pm debug: Finding by ID { _id: '0a0ce469-4cea-465c-96a4-63b13257089c' }
+14/3/2023, 4:36:35 pm debug: Finding with query {"_id":"0a0ce469-4cea-465c-96a4-63b13257089c"}
+14/3/2023, 4:36:39 pm info: Listening on port '9090'
+14/3/2023, 4:46:24 pm info: Listening on port '9090'
+14/3/2023, 6:59:03 pm info: Listening on port '9090'
+14/3/2023, 7:26:19 pm info: Listening on port '9090'
+26/3/2023, 5:45:41 pm info: Listening on port '9090'
+26/3/2023, 5:46:48 pm debug: Processing request '{"method":"GET","url":"/favicon.ico","headers":{"host":"localhost:9090","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","accept-language":"en-GB,en;q=0.9","referer":"http://localhost:9090/","accept-encoding":"gzip, deflate"},"body":{}}'
+26/3/2023, 5:46:48 pm debug: Processing request '{"method":"GET","url":"/apple-touch-icon-precomposed.png","headers":{"host":"localhost:9090","accept":"*/*","accept-language":"en-GB,en;q=0.9","connection":"keep-alive","accept-encoding":"gzip, deflate","user-agent":"Safari/18614.3.7.1.5 CFNetwork/1402.0.8 Darwin/22.2.0"},"body":{}}'
+26/3/2023, 5:46:48 pm debug: Processing request '{"method":"GET","url":"/apple-touch-icon.png","headers":{"host":"localhost:9090","accept":"*/*","accept-language":"en-GB,en;q=0.9","connection":"keep-alive","accept-encoding":"gzip, deflate","user-agent":"Safari/18614.3.7.1.5 CFNetwork/1402.0.8 Darwin/22.2.0"},"body":{}}'
+26/3/2023, 6:08:25 pm info: Listening on port '9090'
+26/3/2023, 6:10:02 pm info: Listening on port '9090'
+26/3/2023, 6:17:22 pm info: Listening on port '9090'
+26/3/2023, 6:17:26 pm info: Listening on port '9090'
+26/3/2023, 6:19:34 pm info: Listening on port '9090'
+26/3/2023, 6:21:10 pm info: Listening on port '9090'
+26/3/2023, 6:22:11 pm info: Listening on port '9090'
+26/3/2023, 6:22:29 pm info: Listening on port '9090'
+26/3/2023, 6:32:06 pm debug: Processing request '{"method":"POST","url":"/","headers":{"host":"localhost:9090","origin":"http://localhost:9090","content-type":"application/x-www-form-urlencoded","accept-encoding":"gzip, deflate","connection":"keep-alive","upgrade-insecure-requests":"1","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"79","accept-language":"en-GB,en;q=0.9"},"body":{"name":["",""],"description":["",""],"rules":"safsdsfvcdsvdsvdsvdsvdsvdsvdsvdsvds"}}'
+26/3/2023, 7:39:36 pm info: Listening on port '9090'
+26/3/2023, 7:51:59 pm info: Listening on port '9090'
+26/3/2023, 9:17:48 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"74","accept-language":"en-GB,en;q=0.9"},"body":{"name":"dummy-event","description":"dummy-event","rules":{"dummy":"yes"}}}'
+26/3/2023, 9:17:48 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"79","accept-language":"en-GB,en;q=0.9"},"body":{"name":"dummy-event2","description":"dummy-event two","rules":{"dummy":"yes"}}}'
+26/3/2023, 9:17:48 pm debug: Upserting with query { _id: 'daaa3e49-166f-475a-a175-4bb5bd3a8017' } for record {
+  name: 'dummy-event',
+  description: 'dummy-event',
+  rules: { dummy: 'yes' },
+  createdAt: '2023-03-26T15:47:48.264Z',
+  updatedAt: '2023-03-26T15:47:48.264Z'
+}
+26/3/2023, 9:17:48 pm debug: Processing request '{"method":"POST","url":"/api/trackingPlan","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"64","accept-language":"en-GB,en;q=0.9"},"body":{"display_name":"dummy-tp","description":"dummy-tp","events":[]}}'
+26/3/2023, 9:17:48 pm debug: Upserting with query { _id: 'ac507ff8-0d2e-404e-b274-a20e2245cee6' } for record {
+  name: 'dummy-event2',
+  description: 'dummy-event two',
+  rules: { dummy: 'yes' },
+  createdAt: '2023-03-26T15:47:48.276Z',
+  updatedAt: '2023-03-26T15:47:48.276Z'
+}
+26/3/2023, 9:17:48 pm debug: Upserting with query { _id: 'd1b7fd3e-d79f-481c-a0ef-def4fc8e0d0b' } for record {
+  display_name: 'dummy-tp',
+  description: 'dummy-tp',
+  events: [ [length]: 0 ],
+  createdAt: '2023-03-26T15:47:48.282Z',
+  updatedAt: '2023-03-26T15:47:48.282Z'
+}
+26/3/2023, 9:17:48 pm info: Event created with ID ac507ff8-0d2e-404e-b274-a20e2245cee6
+26/3/2023, 9:17:48 pm info: Tracking plan created with ID d1b7fd3e-d79f-481c-a0ef-def4fc8e0d0b
+26/3/2023, 9:17:48 pm info: Event created with ID daaa3e49-166f-475a-a175-4bb5bd3a8017
+26/3/2023, 9:57:34 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"65","accept-language":"en-GB,en;q=0.9"},"body":{"name":"d-evt","description":"dsbdffd","rules":{"dummy":"true"}}}'
+26/3/2023, 9:57:34 pm debug: Upserting with query { _id: '2704131e-5c9d-4172-af0f-3fb3f7474d73' } for record {
+  name: 'd-evt',
+  description: 'dsbdffd',
+  rules: { dummy: 'true' },
+  createdAt: '2023-03-26T16:27:34.527Z',
+  updatedAt: '2023-03-26T16:27:34.527Z'
+}
+26/3/2023, 9:57:34 pm info: Event created with ID 2704131e-5c9d-4172-af0f-3fb3f7474d73
+26/3/2023, 9:57:34 pm debug: Processing request '{"method":"POST","url":"/api/trackingPlan","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"62","accept-language":"en-GB,en;q=0.9"},"body":{"display_name":"d-tp","description":"wqeqew","events":[null]}}'
+26/3/2023, 9:57:34 pm debug: Upserting with query { _id: 'eaf0b8d4-3954-4cf4-9bbc-5caf56e8a9bf' } for record {
+  display_name: 'd-tp',
+  description: 'wqeqew',
+  events: [ null, [length]: 1 ],
+  createdAt: '2023-03-26T16:27:34.574Z',
+  updatedAt: '2023-03-26T16:27:34.574Z'
+}
+26/3/2023, 9:57:34 pm info: Tracking plan created with ID eaf0b8d4-3954-4cf4-9bbc-5caf56e8a9bf
+26/3/2023, 10:01:05 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"71","accept-language":"en-GB,en;q=0.9"},"body":{"name":"dummy-advsb","description":"safdfbg","rules":{"dummy":"true"}}}'
+26/3/2023, 10:01:05 pm debug: Upserting with query { _id: 'c224df47-a712-42ae-9770-9cfe9a3d9e1b' } for record {
+  name: 'dummy-advsb',
+  description: 'safdfbg',
+  rules: { dummy: 'true' },
+  createdAt: '2023-03-26T16:31:05.977Z',
+  updatedAt: '2023-03-26T16:31:05.977Z'
+}
+26/3/2023, 10:01:05 pm info: Event created with ID c224df47-a712-42ae-9770-9cfe9a3d9e1b
+26/3/2023, 10:01:06 pm debug: Processing request '{"method":"POST","url":"/api/trackingPlan","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"69","accept-language":"en-GB,en;q=0.9"},"body":{"display_name":"dummy-qwerg","description":"dasffb","events":[null]}}'
+26/3/2023, 10:01:06 pm debug: Upserting with query { _id: '71643e08-cfff-41c8-8ad5-03ed2a95ad0a' } for record {
+  display_name: 'dummy-qwerg',
+  description: 'dasffb',
+  events: [ null, [length]: 1 ],
+  createdAt: '2023-03-26T16:31:06.008Z',
+  updatedAt: '2023-03-26T16:31:06.008Z'
+}
+26/3/2023, 10:01:06 pm info: Tracking plan created with ID 71643e08-cfff-41c8-8ad5-03ed2a95ad0a
+26/3/2023, 10:02:51 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"68","accept-language":"en-GB,en;q=0.9"},"body":{"name":"dummy-evt","description":"adsorb","rules":{"dummy":"true"}}}'
+26/3/2023, 10:02:51 pm debug: Upserting with query { _id: '0ed8c107-1219-4dcd-b2d5-de7e794ecd0e' } for record {
+  name: 'dummy-evt',
+  description: 'adsorb',
+  rules: { dummy: 'true' },
+  createdAt: '2023-03-26T16:32:51.364Z',
+  updatedAt: '2023-03-26T16:32:51.364Z'
+}
+26/3/2023, 10:02:51 pm info: Event created with ID 0ed8c107-1219-4dcd-b2d5-de7e794ecd0e
+26/3/2023, 10:02:51 pm debug: Processing request '{"method":"POST","url":"/api/trackingPlan","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"66","accept-language":"en-GB,en;q=0.9"},"body":{"display_name":"dummy-asc","description":"fvdcs","events":[null]}}'
+26/3/2023, 10:02:51 pm debug: Upserting with query { _id: 'c5b22113-4f8a-4904-bddb-060f5e28f417' } for record {
+  display_name: 'dummy-asc',
+  description: 'fvdcs',
+  events: [ null, [length]: 1 ],
+  createdAt: '2023-03-26T16:32:51.389Z',
+  updatedAt: '2023-03-26T16:32:51.389Z'
+}
+26/3/2023, 10:02:51 pm info: Tracking plan created with ID c5b22113-4f8a-4904-bddb-060f5e28f417
+26/3/2023, 10:04:29 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"70","accept-language":"en-GB,en;q=0.9"},"body":{"name":"dummy-event","description":"adsorb","rules":{"dummy":"true"}}}'
+26/3/2023, 10:04:29 pm debug: Upserting with query { _id: 'd542efdf-006b-49ec-8fbe-0f5d633ebcad' } for record {
+  name: 'dummy-event',
+  description: 'adsorb',
+  rules: { dummy: 'true' },
+  createdAt: '2023-03-26T16:34:29.033Z',
+  updatedAt: '2023-03-26T16:34:29.033Z'
+}
+26/3/2023, 10:04:29 pm info: Event created with ID d542efdf-006b-49ec-8fbe-0f5d633ebcad
+26/3/2023, 10:05:38 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"59","accept-language":"en-GB,en;q=0.9"},"body":{"name":"ear","description":"few","rules":{"dummy":"true"}}}'
+26/3/2023, 10:05:38 pm debug: Upserting with query { _id: '4fe25061-3820-43f4-bf6a-5e473cdc4b74' } for record {
+  name: 'ear',
+  description: 'few',
+  rules: { dummy: 'true' },
+  createdAt: '2023-03-26T16:35:38.672Z',
+  updatedAt: '2023-03-26T16:35:38.672Z'
+}
+26/3/2023, 10:05:38 pm info: Event created with ID 4fe25061-3820-43f4-bf6a-5e473cdc4b74
+26/3/2023, 10:05:38 pm debug: Processing request '{"method":"POST","url":"/api/trackingPlan","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"57","accept-language":"en-GB,en;q=0.9"},"body":{"display_name":"were","description":"efrdw","events":[]}}'
+26/3/2023, 10:05:38 pm debug: Upserting with query { _id: 'afeffddd-2873-4c46-aa68-ca1e5e4358a8' } for record {
+  display_name: 'were',
+  description: 'efrdw',
+  events: [ [length]: 0 ],
+  createdAt: '2023-03-26T16:35:38.684Z',
+  updatedAt: '2023-03-26T16:35:38.684Z'
+}
+26/3/2023, 10:05:38 pm info: Tracking plan created with ID afeffddd-2873-4c46-aa68-ca1e5e4358a8
+26/3/2023, 10:08:37 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"59","accept-language":"en-GB,en;q=0.9"},"body":{"name":"def","description":"def","rules":{"dummy":"true"}}}'
+26/3/2023, 10:08:37 pm debug: Processing request '{"method":"POST","url":"/api/trackingPlan","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"48","accept-language":"en-GB,en;q=0.9"},"body":{"display_name":"widest","description":"qewdfd"}}'
+26/3/2023, 10:08:37 pm debug: Upserting with query { _id: '4a2ff642-9111-4a9b-9fcf-8bff19c7a444' } for record {
+  name: 'def',
+  description: 'def',
+  rules: { dummy: 'true' },
+  createdAt: '2023-03-26T16:38:37.171Z',
+  updatedAt: '2023-03-26T16:38:37.171Z'
+}
+26/3/2023, 10:08:37 pm info: Event created with ID 4a2ff642-9111-4a9b-9fcf-8bff19c7a444
+26/3/2023, 10:08:37 pm error: Error in processing request - Error: INVALID_TRACKING_PLAN
+    at TrackingPlanSvc.<anonymous> (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:26:19)
+    at step (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:44:23)
+    at Object.next (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:25:53)
+    at /Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:19:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:15:12)
+    at TrackingPlanSvc.create (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:63:16)
+    at /Users/vinod/event-engine/src/routes/trackingPlan-router.ts:24:45
+    at step (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:33:23)
+    at Object.next (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:14:53) {
+  [stack]: 'Error: INVALID_TRACKING_PLAN\n' +
+    '    at TrackingPlanSvc.<anonymous> (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:26:19)\n' +
+    '    at step (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:44:23)\n' +
+    '    at Object.next (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:25:53)\n' +
+    '    at /Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:19:71\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at __awaiter (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:15:12)\n' +
+    '    at TrackingPlanSvc.create (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:63:16)\n' +
+    '    at /Users/vinod/event-engine/src/routes/trackingPlan-router.ts:24:45\n' +
+    '    at step (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:33:23)\n' +
+    '    at Object.next (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:14:53)',
+  [message]: 'INVALID_TRACKING_PLAN'
+}
+26/3/2023, 10:09:04 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"60","accept-language":"en-GB,en;q=0.9"},"body":{"name":"woes","description":"def","rules":{"dummy":"true"}}}'
+26/3/2023, 10:09:04 pm debug: Processing request '{"method":"POST","url":"/api/trackingPlan","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"43","accept-language":"en-GB,en;q=0.9"},"body":{"display_name":"awed","description":"def"}}'
+26/3/2023, 10:09:04 pm debug: Upserting with query { _id: 'd3b6e748-ac2d-4e21-ad84-e2bfaf533390' } for record {
+  name: 'woes',
+  description: 'def',
+  rules: { dummy: 'true' },
+  createdAt: '2023-03-26T16:39:04.234Z',
+  updatedAt: '2023-03-26T16:39:04.234Z'
+}
+26/3/2023, 10:09:04 pm error: Error in processing request - Error: INVALID_TRACKING_PLAN
+    at TrackingPlanSvc.<anonymous> (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:26:19)
+    at step (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:44:23)
+    at Object.next (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:25:53)
+    at /Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:19:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:15:12)
+    at TrackingPlanSvc.create (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:63:16)
+    at /Users/vinod/event-engine/src/routes/trackingPlan-router.ts:24:45
+    at step (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:33:23)
+    at Object.next (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:14:53) {
+  [stack]: 'Error: INVALID_TRACKING_PLAN\n' +
+    '    at TrackingPlanSvc.<anonymous> (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:26:19)\n' +
+    '    at step (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:44:23)\n' +
+    '    at Object.next (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:25:53)\n' +
+    '    at /Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:19:71\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at __awaiter (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:15:12)\n' +
+    '    at TrackingPlanSvc.create (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:63:16)\n' +
+    '    at /Users/vinod/event-engine/src/routes/trackingPlan-router.ts:24:45\n' +
+    '    at step (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:33:23)\n' +
+    '    at Object.next (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:14:53)',
+  [message]: 'INVALID_TRACKING_PLAN'
+}
+26/3/2023, 10:09:04 pm info: Event created with ID d3b6e748-ac2d-4e21-ad84-e2bfaf533390
+26/3/2023, 10:09:33 pm debug: Processing request '{"method":"POST","url":"/api/trackingPlan","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"43","accept-language":"en-GB,en;q=0.9"},"body":{"display_name":"awed","description":"def"}}'
+26/3/2023, 10:09:33 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"60","accept-language":"en-GB,en;q=0.9"},"body":{"name":"woes","description":"def","rules":{"dummy":"true"}}}'
+26/3/2023, 10:09:33 pm debug: Upserting with query { _id: '74598b4c-cbbe-4895-af97-7825f52d8c94' } for record {
+  name: 'woes',
+  description: 'def',
+  rules: { dummy: 'true' },
+  createdAt: '2023-03-26T16:39:33.532Z',
+  updatedAt: '2023-03-26T16:39:33.532Z'
+}
+26/3/2023, 10:09:33 pm error: Error in processing request - Error: INVALID_TRACKING_PLAN
+    at TrackingPlanSvc.<anonymous> (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:26:19)
+    at step (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:44:23)
+    at Object.next (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:25:53)
+    at /Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:19:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:15:12)
+    at TrackingPlanSvc.create (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:63:16)
+    at /Users/vinod/event-engine/src/routes/trackingPlan-router.ts:24:45
+    at step (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:33:23)
+    at Object.next (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:14:53) {
+  [stack]: 'Error: INVALID_TRACKING_PLAN\n' +
+    '    at TrackingPlanSvc.<anonymous> (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:26:19)\n' +
+    '    at step (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:44:23)\n' +
+    '    at Object.next (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:25:53)\n' +
+    '    at /Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:19:71\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at __awaiter (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:15:12)\n' +
+    '    at TrackingPlanSvc.create (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:63:16)\n' +
+    '    at /Users/vinod/event-engine/src/routes/trackingPlan-router.ts:24:45\n' +
+    '    at step (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:33:23)\n' +
+    '    at Object.next (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:14:53)',
+  [message]: 'INVALID_TRACKING_PLAN'
+}
+26/3/2023, 10:09:33 pm info: Event created with ID 74598b4c-cbbe-4895-af97-7825f52d8c94
+26/3/2023, 10:11:24 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"63","accept-language":"en-GB,en;q=0.9"},"body":{"name":"gfcvbn","description":"cvbn","rules":{"dummy":"true"}}}'
+26/3/2023, 10:11:24 pm debug: Processing request '{"method":"POST","url":"/api/trackingPlan","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"45","accept-language":"en-GB,en;q=0.9"},"body":{"display_name":"fgcvhb","description":"van"}}'
+26/3/2023, 10:11:24 pm debug: Upserting with query { _id: '1d28138a-a81b-4882-b0bc-40b2a7b568af' } for record {
+  name: 'gfcvbn',
+  description: 'cvbn',
+  rules: { dummy: 'true' },
+  createdAt: '2023-03-26T16:41:24.335Z',
+  updatedAt: '2023-03-26T16:41:24.335Z'
+}
+26/3/2023, 10:11:24 pm error: Error in processing request - Error: INVALID_TRACKING_PLAN
+    at TrackingPlanSvc.<anonymous> (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:26:19)
+    at step (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:44:23)
+    at Object.next (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:25:53)
+    at /Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:19:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:15:12)
+    at TrackingPlanSvc.create (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:63:16)
+    at /Users/vinod/event-engine/src/routes/trackingPlan-router.ts:24:45
+    at step (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:33:23)
+    at Object.next (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:14:53) {
+  [stack]: 'Error: INVALID_TRACKING_PLAN\n' +
+    '    at TrackingPlanSvc.<anonymous> (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:26:19)\n' +
+    '    at step (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:44:23)\n' +
+    '    at Object.next (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:25:53)\n' +
+    '    at /Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:19:71\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at __awaiter (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:15:12)\n' +
+    '    at TrackingPlanSvc.create (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:63:16)\n' +
+    '    at /Users/vinod/event-engine/src/routes/trackingPlan-router.ts:24:45\n' +
+    '    at step (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:33:23)\n' +
+    '    at Object.next (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:14:53)',
+  [message]: 'INVALID_TRACKING_PLAN'
+}
+26/3/2023, 10:11:24 pm info: Event created with ID 1d28138a-a81b-4882-b0bc-40b2a7b568af
+26/3/2023, 10:13:07 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"62","accept-language":"en-GB,en;q=0.9"},"body":{"name":"ghbjnm","description":"ghj","rules":{"dummy":"true"}}}'
+26/3/2023, 10:13:07 pm debug: Processing request '{"method":"POST","url":"/api/trackingPlan","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"47","accept-language":"en-GB,en;q=0.9"},"body":{"display_name":"fight","description":"fghbjn"}}'
+26/3/2023, 10:13:07 pm debug: Upserting with query { _id: '438c26f0-c80a-4c07-b6e6-47bbc8153266' } for record {
+  name: 'ghbjnm',
+  description: 'ghj',
+  rules: { dummy: 'true' },
+  createdAt: '2023-03-26T16:43:07.096Z',
+  updatedAt: '2023-03-26T16:43:07.096Z'
+}
+26/3/2023, 10:13:07 pm error: Error in processing request - Error: INVALID_TRACKING_PLAN
+    at TrackingPlanSvc.<anonymous> (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:26:19)
+    at step (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:44:23)
+    at Object.next (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:25:53)
+    at /Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:19:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:15:12)
+    at TrackingPlanSvc.create (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:63:16)
+    at /Users/vinod/event-engine/src/routes/trackingPlan-router.ts:24:45
+    at step (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:33:23)
+    at Object.next (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:14:53) {
+  [stack]: 'Error: INVALID_TRACKING_PLAN\n' +
+    '    at TrackingPlanSvc.<anonymous> (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:26:19)\n' +
+    '    at step (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:44:23)\n' +
+    '    at Object.next (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:25:53)\n' +
+    '    at /Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:19:71\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at __awaiter (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:15:12)\n' +
+    '    at TrackingPlanSvc.create (/Users/vinod/event-engine/src/svc/trackingPlan-svc.ts:63:16)\n' +
+    '    at /Users/vinod/event-engine/src/routes/trackingPlan-router.ts:24:45\n' +
+    '    at step (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:33:23)\n' +
+    '    at Object.next (/Users/vinod/event-engine/src/routes/trackingPlan-router.ts:14:53)',
+  [message]: 'INVALID_TRACKING_PLAN'
+}
+26/3/2023, 10:13:07 pm info: Event created with ID 438c26f0-c80a-4c07-b6e6-47bbc8153266
+26/3/2023, 10:30:00 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"65","accept-language":"en-GB,en;q=0.9"},"body":{"name":"efwrg","description":"wfegrfb","rules":{"dummy":"true"}}}'
+26/3/2023, 10:30:00 pm debug: Upserting with query { _id: '41aaebac-b556-47fb-9958-b7ebb8421a17' } for record {
+  name: 'efwrg',
+  description: 'wfegrfb',
+  rules: { dummy: 'true' },
+  createdAt: '2023-03-26T17:00:00.531Z',
+  updatedAt: '2023-03-26T17:00:00.531Z'
+}
+26/3/2023, 10:30:00 pm info: Event created with ID 41aaebac-b556-47fb-9958-b7ebb8421a17
+26/3/2023, 10:32:40 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"59","accept-language":"en-GB,en;q=0.9"},"body":{"name":"die","description":"def","rules":{"dummy":"true"}}}'
+26/3/2023, 10:32:40 pm debug: Upserting with query { _id: '7ed0c567-ba78-4f11-957e-18c4bb993ba8' } for record {
+  name: 'die',
+  description: 'def',
+  rules: { dummy: 'true' },
+  createdAt: '2023-03-26T17:02:40.344Z',
+  updatedAt: '2023-03-26T17:02:40.344Z'
+}
+26/3/2023, 10:32:40 pm info: Event created with ID 7ed0c567-ba78-4f11-957e-18c4bb993ba8
+26/3/2023, 10:33:43 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"59","accept-language":"en-GB,en;q=0.9"},"body":{"name":"dsf","description":"das","rules":{"dummy":"true"}}}'
+26/3/2023, 10:33:43 pm debug: Upserting with query { _id: '119138fd-952d-46b2-b614-2972d4e1ba80' } for record {
+  name: 'dsf',
+  description: 'das',
+  rules: { dummy: 'true' },
+  createdAt: '2023-03-26T17:03:43.841Z',
+  updatedAt: '2023-03-26T17:03:43.841Z'
+}
+26/3/2023, 10:33:43 pm info: Event created with ID 119138fd-952d-46b2-b614-2972d4e1ba80
+26/3/2023, 10:36:53 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"67","accept-language":"en-GB,en;q=0.9"},"body":{"name":"qwdfegb","description":"eqdwfef","rules":{"dummy":"true"}}}'
+26/3/2023, 10:36:53 pm debug: Upserting with query { _id: '2fb3def1-f2a4-40f8-af5a-d2501ee6ceba' } for record {
+  name: 'qwdfegb',
+  description: 'eqdwfef',
+  rules: { dummy: 'true' },
+  createdAt: '2023-03-26T17:06:53.927Z',
+  updatedAt: '2023-03-26T17:06:53.927Z'
+}
+26/3/2023, 10:36:53 pm info: Event created with ID 2fb3def1-f2a4-40f8-af5a-d2501ee6ceba
+26/3/2023, 10:39:48 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"60","accept-language":"en-GB,en;q=0.9"},"body":{"name":"dwfe","description":"gfd","rules":{"dummy":"true"}}}'
+26/3/2023, 10:39:48 pm debug: Upserting with query { _id: '26b75d3f-f144-4c5f-b3ee-b3fccd341367' } for record {
+  name: 'dwfe',
+  description: 'gfd',
+  rules: { dummy: 'true' },
+  createdAt: '2023-03-26T17:09:48.076Z',
+  updatedAt: '2023-03-26T17:09:48.076Z'
+}
+26/3/2023, 10:39:48 pm info: Event created with ID 26b75d3f-f144-4c5f-b3ee-b3fccd341367
+26/3/2023, 10:40:56 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"60","accept-language":"en-GB,en;q=0.9"},"body":{"name":"qswd","description":"dew","rules":{"dummy":"true"}}}'
+26/3/2023, 10:40:56 pm debug: Upserting with query { _id: '56ecc524-675f-4946-8980-89c80df89daf' } for record {
+  name: 'qswd',
+  description: 'dew',
+  rules: { dummy: 'true' },
+  createdAt: '2023-03-26T17:10:56.961Z',
+  updatedAt: '2023-03-26T17:10:56.961Z'
+}
+26/3/2023, 10:40:56 pm info: Event created with ID 56ecc524-675f-4946-8980-89c80df89daf
+26/3/2023, 10:48:24 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"59","accept-language":"en-GB,en;q=0.9"},"body":{"name":"dew","description":"did","rules":{"dummy":"true"}}}'
+26/3/2023, 10:48:24 pm debug: Upserting with query { _id: 'ba8626bb-ed4e-44f9-aae6-f9e05f43cdae' } for record {
+  name: 'dew',
+  description: 'did',
+  rules: { dummy: 'true' },
+  createdAt: '2023-03-26T17:18:24.857Z',
+  updatedAt: '2023-03-26T17:18:24.857Z'
+}
+26/3/2023, 10:48:24 pm info: Event created with ID ba8626bb-ed4e-44f9-aae6-f9e05f43cdae
+26/3/2023, 10:52:42 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"60","accept-language":"en-GB,en;q=0.9"},"body":{"name":"feds","description":"vdd","rules":{"dummy":"true"}}}'
+26/3/2023, 10:52:42 pm debug: Upserting with query { _id: '5e225376-f331-4acf-a4d5-4b0c681c44aa' } for record {
+  name: 'feds',
+  description: 'vdd',
+  rules: { dummy: 'true' },
+  createdAt: '2023-03-26T17:22:42.996Z',
+  updatedAt: '2023-03-26T17:22:42.996Z'
+}
+26/3/2023, 10:52:43 pm info: Event created with ID 5e225376-f331-4acf-a4d5-4b0c681c44aa
+26/3/2023, 10:54:06 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"62","accept-language":"en-GB,en;q=0.9"},"body":{"name":"sds","description":"sfsfcv","rules":{"dummy":"true"}}}'
+26/3/2023, 10:54:06 pm debug: Upserting with query { _id: '9d1aac81-73cf-438b-8001-2a55763c60a1' } for record {
+  name: 'sds',
+  description: 'sfsfcv',
+  rules: { dummy: 'true' },
+  createdAt: '2023-03-26T17:24:06.288Z',
+  updatedAt: '2023-03-26T17:24:06.288Z'
+}
+26/3/2023, 10:54:06 pm info: Event created with ID 9d1aac81-73cf-438b-8001-2a55763c60a1
+26/3/2023, 10:57:05 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"85","accept-language":"en-GB,en;q=0.9"},"body":{"name":"dummy-event1","description":"This is a dummy event.","rules":{"dummy":true}}}'
+26/3/2023, 10:57:05 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"85","accept-language":"en-GB,en;q=0.9"},"body":{"name":"dummy-event2","description":"This is a dummy event.","rules":{"dummy":true}}}'
+26/3/2023, 10:57:05 pm debug: Upserting with query { _id: '0272b654-50a4-4406-ad17-aeb18cced126' } for record {
+  name: 'dummy-event1',
+  description: 'This is a dummy event.',
+  rules: { dummy: true },
+  createdAt: '2023-03-26T17:27:05.366Z',
+  updatedAt: '2023-03-26T17:27:05.366Z'
+}
+26/3/2023, 10:57:05 pm debug: Upserting with query { _id: 'ed154697-0f31-4f9f-9e34-2aacf607bd93' } for record {
+  name: 'dummy-event2',
+  description: 'This is a dummy event.',
+  rules: { dummy: true },
+  createdAt: '2023-03-26T17:27:05.373Z',
+  updatedAt: '2023-03-26T17:27:05.373Z'
+}
+26/3/2023, 10:57:05 pm info: Event created with ID 0272b654-50a4-4406-ad17-aeb18cced126
+26/3/2023, 10:57:05 pm info: Event created with ID ed154697-0f31-4f9f-9e34-2aacf607bd93
+26/3/2023, 10:57:05 pm debug: Processing request '{"method":"POST","url":"/api/trackingPlan","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"154","accept-language":"en-GB,en;q=0.9"},"body":{"display_name":"dummy-plan","description":"This is dummy plan.","events":["0272b654-50a4-4406-ad17-aeb18cced126","ed154697-0f31-4f9f-9e34-2aacf607bd93"]}}'
+26/3/2023, 10:57:05 pm debug: Upserting with query { _id: 'e812cb59-48e3-4923-83a6-f71d407aed41' } for record {
+  display_name: 'dummy-plan',
+  description: 'This is dummy plan.',
+  events: [
+    '0272b654-50a4-4406-ad17-aeb18cced126',
+    'ed154697-0f31-4f9f-9e34-2aacf607bd93',
+    [length]: 2
+  ],
+  createdAt: '2023-03-26T17:27:05.398Z',
+  updatedAt: '2023-03-26T17:27:05.398Z'
+}
+26/3/2023, 10:57:05 pm info: Tracking plan created with ID e812cb59-48e3-4923-83a6-f71d407aed41
+26/3/2023, 10:59:06 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"61","accept-language":"en-GB,en;q=0.9"},"body":{"name":"t-evt","description":"dummy","rules":{"dummy":true}}}'
+26/3/2023, 10:59:06 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"63","accept-language":"en-GB,en;q=0.9"},"body":{"name":"t-evt-2","description":"dummy","rules":{"dummy":true}}}'
+26/3/2023, 10:59:06 pm debug: Upserting with query { _id: 'c9237f13-dd4b-4bcf-bbb1-2b72f8be9224' } for record {
+  name: 't-evt',
+  description: 'dummy',
+  rules: { dummy: true },
+  createdAt: '2023-03-26T17:29:06.881Z',
+  updatedAt: '2023-03-26T17:29:06.881Z'
+}
+26/3/2023, 10:59:06 pm debug: Upserting with query { _id: 'e813b949-f06f-4337-bd9f-d87395e93c33' } for record {
+  name: 't-evt-2',
+  description: 'dummy',
+  rules: { dummy: true },
+  createdAt: '2023-03-26T17:29:06.886Z',
+  updatedAt: '2023-03-26T17:29:06.886Z'
+}
+26/3/2023, 10:59:06 pm info: Event created with ID c9237f13-dd4b-4bcf-bbb1-2b72f8be9224
+26/3/2023, 10:59:06 pm info: Event created with ID e813b949-f06f-4337-bd9f-d87395e93c33
+26/3/2023, 10:59:06 pm debug: Processing request '{"method":"POST","url":"/api/trackingPlan","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"134","accept-language":"en-GB,en;q=0.9"},"body":{"display_name":"d-tp","description":"dummy","events":["c9237f13-dd4b-4bcf-bbb1-2b72f8be9224","e813b949-f06f-4337-bd9f-d87395e93c33"]}}'
+26/3/2023, 10:59:06 pm debug: Upserting with query { _id: '76ca69b0-2671-403e-9697-9494978d16b1' } for record {
+  display_name: 'd-tp',
+  description: 'dummy',
+  events: [
+    'c9237f13-dd4b-4bcf-bbb1-2b72f8be9224',
+    'e813b949-f06f-4337-bd9f-d87395e93c33',
+    [length]: 2
+  ],
+  createdAt: '2023-03-26T17:29:06.906Z',
+  updatedAt: '2023-03-26T17:29:06.906Z'
+}
+26/3/2023, 10:59:06 pm info: Tracking plan created with ID 76ca69b0-2671-403e-9697-9494978d16b1
+26/3/2023, 11:02:39 pm debug: Processing request '{"method":"GET","url":"/form.js","headers":{"host":"localhost:9090","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","accept-language":"en-GB,en;q=0.9","referer":"http://localhost:9090/","accept-encoding":"gzip, deflate"},"body":{}}'
+26/3/2023, 11:06:14 pm debug: Processing request '{"method":"GET","url":"/ui/form.js","headers":{"host":"localhost:9090","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","accept-language":"en-GB,en;q=0.9","referer":"http://localhost:9090/","accept-encoding":"gzip, deflate"},"body":{}}'
+26/3/2023, 11:08:14 pm debug: Processing request '{"method":"GET","url":"/form.js","headers":{"host":"localhost:9090","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","accept-language":"en-GB,en;q=0.9","referer":"http://localhost:9090/","accept-encoding":"gzip, deflate"},"body":{}}'
+26/3/2023, 11:09:45 pm debug: Processing request '{"method":"GET","url":"/ui","headers":{"host":"localhost:9090","upgrade-insecure-requests":"1","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","accept-language":"en-GB,en;q=0.9","accept-encoding":"gzip, deflate","connection":"keep-alive"},"body":{}}'
+26/3/2023, 11:09:52 pm debug: Processing request '{"method":"GET","url":"/src","headers":{"host":"localhost:9090","upgrade-insecure-requests":"1","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","accept-language":"en-GB,en;q=0.9","accept-encoding":"gzip, deflate","connection":"keep-alive"},"body":{}}'
+26/3/2023, 11:13:08 pm debug: Processing request '{"method":"GET","url":"/form.js","headers":{"host":"localhost:9090","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","accept-language":"en-GB,en;q=0.9","referer":"http://localhost:9090/","accept-encoding":"gzip, deflate"},"body":{}}'
+26/3/2023, 11:13:10 pm debug: Processing request '{"method":"GET","url":"/form.js","headers":{"host":"localhost:9090","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","accept-language":"en-GB,en;q=0.9","referer":"http://localhost:9090/","accept-encoding":"gzip, deflate"},"body":{}}'
+26/3/2023, 11:14:12 pm debug: Processing request '{"method":"GET","url":"/form.js","headers":{"host":"localhost:9090","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","accept-language":"en-GB,en;q=0.9","referer":"http://localhost:9090/","accept-encoding":"gzip, deflate"},"body":{}}'
+26/3/2023, 11:14:13 pm debug: Processing request '{"method":"GET","url":"/form.js","headers":{"host":"localhost:9090","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","accept-language":"en-GB,en;q=0.9","referer":"http://localhost:9090/","accept-encoding":"gzip, deflate"},"body":{}}'
+26/3/2023, 11:15:40 pm debug: Processing request '{"method":"GET","url":"/ui/form.js","headers":{"host":"localhost:9090","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","accept-language":"en-GB,en;q=0.9","referer":"http://localhost:9090/","accept-encoding":"gzip, deflate"},"body":{}}'
+26/3/2023, 11:15:40 pm debug: Processing request '{"method":"GET","url":"/ui/form.js","headers":{"host":"localhost:9090","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","accept-language":"en-GB,en;q=0.9","referer":"http://localhost:9090/","accept-encoding":"gzip, deflate"},"body":{}}'
+26/3/2023, 11:21:36 pm debug: Processing request '{"method":"POST","url":"/api/event","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"64","accept-language":"en-GB,en;q=0.9"},"body":{"name":"eqwewq","description":"wqewqe","rules":{"dummy":false}}}'
+26/3/2023, 11:21:36 pm debug: Upserting with query { _id: '821c0a5e-a417-494d-b39d-1a50a4f0ea4f' } for record {
+  name: 'eqwewq',
+  description: 'wqewqe',
+  rules: { dummy: false },
+  createdAt: '2023-03-26T17:51:36.916Z',
+  updatedAt: '2023-03-26T17:51:36.916Z'
+}
+26/3/2023, 11:21:36 pm info: Event created with ID 821c0a5e-a417-494d-b39d-1a50a4f0ea4f
+26/3/2023, 11:21:36 pm debug: Processing request '{"method":"POST","url":"/api/trackingPlan","headers":{"host":"localhost:9090","content-type":"application/json","origin":"http://localhost:9090","accept-encoding":"gzip, deflate","connection":"keep-alive","accept":"*/*","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","referer":"http://localhost:9090/","content-length":"100","accept-language":"en-GB,en;q=0.9"},"body":{"display_name":"ewewewe","description":"ewqewqe","events":["821c0a5e-a417-494d-b39d-1a50a4f0ea4f"]}}'
+26/3/2023, 11:21:36 pm debug: Upserting with query { _id: 'f49857d2-3776-412c-9a98-3fa7a3f1c38a' } for record {
+  display_name: 'ewewewe',
+  description: 'ewqewqe',
+  events: [ '821c0a5e-a417-494d-b39d-1a50a4f0ea4f', [length]: 1 ],
+  createdAt: '2023-03-26T17:51:36.947Z',
+  updatedAt: '2023-03-26T17:51:36.947Z'
+}
+26/3/2023, 11:21:36 pm info: Tracking plan created with ID f49857d2-3776-412c-9a98-3fa7a3f1c38a
+27/3/2023, 3:43:45 pm debug: Processing request '{"method":"GET","url":"/api/trackingPlan","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"3d06f8ce-8f67-40b7-895b-e25cc734a1df","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+27/3/2023, 3:43:45 pm debug: Finding all with skip 0 and limit 100
+27/3/2023, 3:43:45 pm debug: Finding with query {}
+27/3/2023, 3:49:55 pm debug: Processing request '{"method":"GET","url":"/api/event","headers":{"user-agent":"PostmanRuntime/7.30.0","accept":"*/*","postman-token":"f1dd34d3-4f86-48c4-8410-f95cda6789f3","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+27/3/2023, 3:49:55 pm debug: Finding all with skip 0 and limit 100
+27/3/2023, 3:49:55 pm debug: Finding with query {}
