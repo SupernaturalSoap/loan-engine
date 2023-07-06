@@ -1,0 +1,410 @@
+6/7/2023, 10:55:07 am info: Listening on port '9090'
+6/7/2023, 10:57:42 am debug: Processing request '{"method":"POST","url":"/loan","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"c19b8a6c-b5d1-4e17-b375-8fbad4e4bd4c","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"65"},"body":{"userId":"256","amount":"10000","tenure":"3"}}'
+6/7/2023, 10:57:53 am debug: Processing request '{"method":"POST","url":"/loan","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"b497e130-9d86-4323-b9f3-30aba7170167","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"65"},"body":{"userId":"256","amount":"10000","tenure":"3"}}'
+6/7/2023, 10:59:48 am debug: Processing request '{"method":"POST","url":"/","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"0f3bbcbf-4980-4492-9efe-07bddbfab2a7","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"65"},"body":{"userId":"256","amount":"10000","tenure":"3"}}'
+6/7/2023, 11:43:21 am info: Listening on port '9090'
+6/7/2023, 11:43:22 am debug: Processing request '{"method":"POST","url":"/loan/","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"68bcba69-98ed-4bb4-a6ec-5c8b4cb574e0","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"65"},"body":{"userId":"256","amount":"10000","tenure":"3"}}'
+6/7/2023, 11:43:59 am debug: Processing request '{"method":"POST","url":"/api/loan/","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"c0d54db9-d971-4d53-a31e-c1180c198227","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"65"},"body":{"userId":"256","amount":"10000","tenure":"3"}}'
+6/7/2023, 11:43:59 am debug: Upserting with query { _id: '1477d21d-af43-4d38-a2b1-75e5e18a9e4d' } for record {
+  userId: '256',
+  amount: '10000',
+  tenure: '3',
+  status: 'PENDING',
+  createdAt: '2023-07-06T06:13:59.883Z',
+  updatedAt: '2023-07-06T06:13:59.883Z'
+}
+6/7/2023, 11:43:59 am debug: Upserting with query { _id: '24e440c3-e3f1-42f3-a48a-7e4ed6f3a867' } for record {
+  userId: '256',
+  loanId: undefined,
+  amount: '3333.3333333333335',
+  scheduledPaymentDate: 1689228839982,
+  status: 'PENDING',
+  createdAt: '2023-07-06T06:13:59.983Z',
+  updatedAt: '2023-07-06T06:13:59.983Z'
+}
+6/7/2023, 11:44:00 am info: Repayment created with ID 24e440c3-e3f1-42f3-a48a-7e4ed6f3a867
+6/7/2023, 11:44:00 am debug: Upserting with query { _id: '3de52b4a-faf3-438c-858c-edb3db3616d4' } for record {
+  userId: '256',
+  loanId: undefined,
+  amount: '3333.3333333333335',
+  scheduledPaymentDate: 1689833640015,
+  status: 'PENDING',
+  createdAt: '2023-07-06T06:14:00.015Z',
+  updatedAt: '2023-07-06T06:14:00.015Z'
+}
+6/7/2023, 11:44:00 am info: Repayment created with ID 3de52b4a-faf3-438c-858c-edb3db3616d4
+6/7/2023, 11:44:00 am debug: Upserting with query { _id: 'eac3da02-3a8b-4d0a-b8e3-317d0025ae6e' } for record {
+  userId: '256',
+  loanId: undefined,
+  amount: '3333.3333333333335',
+  scheduledPaymentDate: 1690438440018,
+  status: 'PENDING',
+  createdAt: '2023-07-06T06:14:00.018Z',
+  updatedAt: '2023-07-06T06:14:00.018Z'
+}
+6/7/2023, 11:44:00 am info: Repayment created with ID eac3da02-3a8b-4d0a-b8e3-317d0025ae6e
+6/7/2023, 11:44:00 am info: Loan created with ID 1477d21d-af43-4d38-a2b1-75e5e18a9e4d
+6/7/2023, 11:45:02 am info: Listening on port '9090'
+6/7/2023, 11:45:28 am debug: Processing request '{"method":"POST","url":"/api/loan/","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"d47be1c4-4b2e-4ec7-8549-eb9de5f35061","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"65"},"body":{"userId":"256","amount":"10000","tenure":"3"}}'
+6/7/2023, 11:45:28 am debug: Upserting with query { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' } for record {
+  userId: '256',
+  amount: '10000',
+  tenure: '3',
+  status: 'PENDING',
+  createdAt: '2023-07-06T06:15:28.477Z',
+  updatedAt: '2023-07-06T06:15:28.477Z'
+}
+6/7/2023, 11:45:28 am debug: Upserting with query { _id: '93c30685-fc0e-486c-803c-e4d8f47285ac' } for record {
+  userId: '256',
+  loanId: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c',
+  amount: '3333.3333333333335',
+  scheduledPaymentDate: 1689228928525,
+  status: 'PENDING',
+  createdAt: '2023-07-06T06:15:28.525Z',
+  updatedAt: '2023-07-06T06:15:28.525Z'
+}
+6/7/2023, 11:45:28 am info: Repayment created with ID 93c30685-fc0e-486c-803c-e4d8f47285ac
+6/7/2023, 11:45:28 am debug: Upserting with query { _id: 'bd761131-c939-40c6-9c00-06162fc4ead8' } for record {
+  userId: '256',
+  loanId: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c',
+  amount: '3333.3333333333335',
+  scheduledPaymentDate: 1689833728558,
+  status: 'PENDING',
+  createdAt: '2023-07-06T06:15:28.558Z',
+  updatedAt: '2023-07-06T06:15:28.558Z'
+}
+6/7/2023, 11:45:28 am info: Repayment created with ID bd761131-c939-40c6-9c00-06162fc4ead8
+6/7/2023, 11:45:28 am debug: Upserting with query { _id: '23ff8d22-00dd-4988-9a36-6b201e518e9e' } for record {
+  userId: '256',
+  loanId: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c',
+  amount: '3333.3333333333335',
+  scheduledPaymentDate: 1690438528563,
+  status: 'PENDING',
+  createdAt: '2023-07-06T06:15:28.563Z',
+  updatedAt: '2023-07-06T06:15:28.563Z'
+}
+6/7/2023, 11:45:28 am info: Repayment created with ID 23ff8d22-00dd-4988-9a36-6b201e518e9e
+6/7/2023, 11:45:28 am info: Loan created with ID 1d26d206-7b4a-46fc-9f30-d5c2a54df83c
+6/7/2023, 11:47:10 am debug: Processing request '{"method":"GET","url":"/api/loan/","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"7edf79a5-318a-428f-8f4a-439ce3b09157","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 11:47:10 am debug: Finding all with skip 0 and limit 100
+6/7/2023, 11:47:10 am debug: Finding with query {}
+6/7/2023, 11:48:15 am debug: Processing request '{"method":"PATCH","url":"/api/loan/","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"ef24fe1f-239f-404d-baa2-0ad31b726d64","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"189"},"body":{"amount":"10000","status":"APPROVED","tenure":"3","userId":"256","id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}}'
+6/7/2023, 11:48:15 am debug: Finding by ID { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' }
+6/7/2023, 11:48:15 am debug: Finding with query {"_id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 11:48:15 am debug: Upserting with query { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' } for record {
+  amount: '10000',
+  createdAt: '2023-07-06T06:15:28.477Z',
+  status: 'APPROVED',
+  tenure: '3',
+  updatedAt: '2023-07-06T06:18:15.056Z',
+  userId: '256'
+}
+6/7/2023, 11:48:15 am info: Loan updated with status: PENDING and id: 1d26d206-7b4a-46fc-9f30-d5c2a54df83c
+6/7/2023, 11:48:27 am debug: Processing request '{"method":"GET","url":"/api/loan/","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"ecafe84c-c2e6-4053-af63-c3a37a17663a","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 11:48:27 am debug: Finding all with skip 0 and limit 100
+6/7/2023, 11:48:27 am debug: Finding with query {}
+6/7/2023, 11:49:48 am info: Listening on port '9090'
+6/7/2023, 11:50:03 am info: Listening on port '9090'
+6/7/2023, 11:50:06 am debug: Processing request '{"method":"PATCH","url":"/api/loan/","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"56356b1a-1250-4007-8f39-53a5e789f2e9","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"189"},"body":{"amount":"10000","status":"APPROVED","tenure":"3","userId":"256","id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}}'
+6/7/2023, 11:50:06 am debug: Finding by ID { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' }
+6/7/2023, 11:50:06 am debug: Finding with query {"_id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 11:50:06 am debug: Upserting with query { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' } for record {
+  amount: '10000',
+  createdAt: '2023-07-06T06:15:28.477Z',
+  status: 'APPROVED',
+  tenure: '3',
+  updatedAt: '2023-07-06T06:20:06.562Z',
+  userId: '256'
+}
+6/7/2023, 11:50:06 am info: Loan updated with status: APPROVED and id: 1d26d206-7b4a-46fc-9f30-d5c2a54df83c
+6/7/2023, 11:50:56 am info: Listening on port '9090'
+6/7/2023, 11:50:57 am debug: Processing request '{"method":"PATCH","url":"/api/loan/","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"7b5aa91d-28b0-4924-a991-def8c4a2e789","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"189"},"body":{"amount":"10000","status":"APPROVED","tenure":"3","userId":"256","id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}}'
+6/7/2023, 11:50:57 am debug: Finding by ID { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' }
+6/7/2023, 11:50:57 am debug: Finding with query {"_id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 11:50:57 am debug: Upserting with query { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' } for record {
+  amount: '10000',
+  createdAt: '2023-07-06T06:15:28.477Z',
+  status: 'APPROVED',
+  tenure: '3',
+  updatedAt: '2023-07-06T06:20:57.999Z',
+  userId: '256'
+}
+6/7/2023, 11:50:58 am info: Loan updated with status: APPROVED and id: 1d26d206-7b4a-46fc-9f30-d5c2a54df83c
+6/7/2023, 11:51:38 am info: Listening on port '9090'
+6/7/2023, 11:51:45 am info: Listening on port '9090'
+6/7/2023, 11:51:50 am info: Listening on port '9090'
+6/7/2023, 11:51:52 am debug: Processing request '{"method":"PATCH","url":"/api/loan/","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"430180a5-cf70-430e-8998-ba2ad9ed2441","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"189"},"body":{"amount":"10000","status":"APPROVED","tenure":"3","userId":"256","id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}}'
+6/7/2023, 11:51:52 am debug: Finding by ID { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' }
+6/7/2023, 11:51:52 am debug: Finding with query {"_id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 11:51:52 am debug: Upserting with query { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' } for record {
+  amount: '10000',
+  createdAt: '2023-07-06T06:15:28.477Z',
+  status: 'APPROVED',
+  tenure: '3',
+  updatedAt: '2023-07-06T06:21:52.740Z',
+  userId: '256'
+}
+6/7/2023, 11:51:52 am info: Loan updated with status: APPROVED and id: 1d26d206-7b4a-46fc-9f30-d5c2a54df83c
+6/7/2023, 11:51:54 am debug: Processing request '{"method":"PATCH","url":"/api/loan/","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"4e0563b7-0c00-48be-946b-f0ec814efc53","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"189"},"body":{"amount":"10000","status":"APPROVED","tenure":"3","userId":"256","id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}}'
+6/7/2023, 11:51:54 am debug: Finding by ID { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' }
+6/7/2023, 11:51:54 am debug: Finding with query {"_id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 11:51:54 am debug: Upserting with query { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' } for record {
+  amount: '10000',
+  createdAt: '2023-07-06T06:15:28.477Z',
+  status: 'APPROVED',
+  tenure: '3',
+  updatedAt: '2023-07-06T06:21:54.199Z',
+  userId: '256'
+}
+6/7/2023, 11:51:54 am info: Loan updated with status: APPROVED and id: 1d26d206-7b4a-46fc-9f30-d5c2a54df83c
+6/7/2023, 11:52:00 am debug: Processing request '{"method":"PATCH","url":"/api/loan/","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"65eb84c2-4cb6-4ace-9a14-27f6b22a691f","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"187"},"body":{"amount":"10000","status":"CLOSED","tenure":"3","userId":"256","id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}}'
+6/7/2023, 11:52:00 am debug: Finding by ID { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' }
+6/7/2023, 11:52:00 am debug: Finding with query {"_id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 11:52:00 am debug: Upserting with query { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' } for record {
+  amount: '10000',
+  createdAt: '2023-07-06T06:15:28.477Z',
+  status: 'CLOSED',
+  tenure: '3',
+  updatedAt: '2023-07-06T06:22:00.602Z',
+  userId: '256'
+}
+6/7/2023, 11:52:00 am info: Loan updated with status: APPROVED and id: 1d26d206-7b4a-46fc-9f30-d5c2a54df83c
+6/7/2023, 11:52:05 am debug: Processing request '{"method":"PATCH","url":"/api/loan/","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"17294736-25e6-4610-a660-ac137b1a7fa8","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"189"},"body":{"amount":"10000","status":"APPROVED","tenure":"3","userId":"256","id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}}'
+6/7/2023, 11:52:05 am debug: Finding by ID { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' }
+6/7/2023, 11:52:05 am debug: Finding with query {"_id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 11:52:05 am debug: Upserting with query { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' } for record {
+  amount: '10000',
+  createdAt: '2023-07-06T06:15:28.477Z',
+  status: 'APPROVED',
+  tenure: '3',
+  updatedAt: '2023-07-06T06:22:05.702Z',
+  userId: '256'
+}
+6/7/2023, 11:52:05 am info: Loan updated with status: CLOSED and id: 1d26d206-7b4a-46fc-9f30-d5c2a54df83c
+6/7/2023, 11:52:08 am info: Listening on port '9090'
+6/7/2023, 11:52:43 am debug: Processing request '{"method":"GET","url":"/api/loan/1d26d206-7b4a-46fc-9f30-d5c2a54df83c","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"6648ec56-53af-4aaa-b676-f2e5392be0a4","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 11:53:10 am debug: Processing request '{"method":"GET","url":"/api/loan/1d26d206-7b4a-46fc-9f30-d5c2a54df83c/256","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"f6580b44-224f-4d51-a529-e6661605ba31","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 11:53:10 am debug: Finding by ID { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' }
+6/7/2023, 11:53:10 am debug: Finding with query {"_id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 11:53:15 am debug: Processing request '{"method":"GET","url":"/api/loan/1d26d206-7b4a-46fc-9f30-d5c2a54df83c","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"9eb5db04-4e6d-4b88-8634-547d5dd296c8","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 11:54:58 am info: Listening on port '9090'
+6/7/2023, 12:08:38 pm info: Listening on port '9090'
+6/7/2023, 12:08:52 pm debug: Processing request '{"method":"GET","url":"/api/loan/1d26d206-7b4a-46fc-9f30-d5c2a54df83c/","headers":{"userid":"256","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"e681e462-9596-4bdd-a0b7-be50eeb692fc","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 12:08:52 pm debug: Finding by ID { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' }
+6/7/2023, 12:08:52 pm debug: Finding with query {"_id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 12:08:52 pm error: Error in processing request - Error: INVALID_CUSTOMER
+    at LoanSvc.<anonymous> (/Users/vinod/loan-engine/src/svc/loan-svc.ts:70:19)
+    at step (/Users/vinod/loan-engine/src/svc/loan-svc.ts:44:23)
+    at Object.next (/Users/vinod/loan-engine/src/svc/loan-svc.ts:25:53)
+    at fulfilled (/Users/vinod/loan-engine/src/svc/loan-svc.ts:16:58)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  [stack]: 'Error: INVALID_CUSTOMER\n' +
+    '    at LoanSvc.<anonymous> (/Users/vinod/loan-engine/src/svc/loan-svc.ts:70:19)\n' +
+    '    at step (/Users/vinod/loan-engine/src/svc/loan-svc.ts:44:23)\n' +
+    '    at Object.next (/Users/vinod/loan-engine/src/svc/loan-svc.ts:25:53)\n' +
+    '    at fulfilled (/Users/vinod/loan-engine/src/svc/loan-svc.ts:16:58)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  [message]: 'INVALID_CUSTOMER'
+}
+6/7/2023, 12:09:06 pm debug: Processing request '{"method":"GET","url":"/api/loan/1d26d206-7b4a-46fc-9f30-d5c2a54df83c","headers":{"userid":"256","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"8f9719bf-9225-4391-a529-fd5b065563de","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 12:09:06 pm debug: Finding by ID { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' }
+6/7/2023, 12:09:06 pm debug: Finding with query {"_id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 12:09:07 pm error: Error in processing request - Error: INVALID_CUSTOMER
+    at LoanSvc.<anonymous> (/Users/vinod/loan-engine/src/svc/loan-svc.ts:70:19)
+    at step (/Users/vinod/loan-engine/src/svc/loan-svc.ts:44:23)
+    at Object.next (/Users/vinod/loan-engine/src/svc/loan-svc.ts:25:53)
+    at fulfilled (/Users/vinod/loan-engine/src/svc/loan-svc.ts:16:58)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  [stack]: 'Error: INVALID_CUSTOMER\n' +
+    '    at LoanSvc.<anonymous> (/Users/vinod/loan-engine/src/svc/loan-svc.ts:70:19)\n' +
+    '    at step (/Users/vinod/loan-engine/src/svc/loan-svc.ts:44:23)\n' +
+    '    at Object.next (/Users/vinod/loan-engine/src/svc/loan-svc.ts:25:53)\n' +
+    '    at fulfilled (/Users/vinod/loan-engine/src/svc/loan-svc.ts:16:58)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  [message]: 'INVALID_CUSTOMER'
+}
+6/7/2023, 12:12:24 pm debug: Processing request `{"method":"GET","url":"/api/loan/1d26d206-7b4a-46fc-9f30-d5c2a54df83c","headers":{"userid":"'256'","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"08bd444b-ecb3-49cb-b620-d91dc4f528b1","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}`
+6/7/2023, 12:12:24 pm debug: Finding by ID { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' }
+6/7/2023, 12:12:24 pm debug: Finding with query {"_id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 12:12:24 pm error: Error in processing request - Error: INVALID_CUSTOMER
+    at LoanSvc.<anonymous> (/Users/vinod/loan-engine/src/svc/loan-svc.ts:70:19)
+    at step (/Users/vinod/loan-engine/src/svc/loan-svc.ts:44:23)
+    at Object.next (/Users/vinod/loan-engine/src/svc/loan-svc.ts:25:53)
+    at fulfilled (/Users/vinod/loan-engine/src/svc/loan-svc.ts:16:58)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  [stack]: 'Error: INVALID_CUSTOMER\n' +
+    '    at LoanSvc.<anonymous> (/Users/vinod/loan-engine/src/svc/loan-svc.ts:70:19)\n' +
+    '    at step (/Users/vinod/loan-engine/src/svc/loan-svc.ts:44:23)\n' +
+    '    at Object.next (/Users/vinod/loan-engine/src/svc/loan-svc.ts:25:53)\n' +
+    '    at fulfilled (/Users/vinod/loan-engine/src/svc/loan-svc.ts:16:58)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  [message]: 'INVALID_CUSTOMER'
+}
+6/7/2023, 12:13:31 pm info: Listening on port '9090'
+6/7/2023, 12:13:39 pm debug: Processing request `{"method":"GET","url":"/api/loan/1d26d206-7b4a-46fc-9f30-d5c2a54df83c","headers":{"userid":"'256'","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"1340537c-0ccb-4bcd-b83f-500e5d6af295","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}`
+6/7/2023, 12:13:39 pm debug: Finding by ID { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' }
+6/7/2023, 12:13:39 pm debug: Finding with query {"_id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 12:13:39 pm error: Error in processing request - Error: INVALID_CUSTOMER
+    at LoanSvc.<anonymous> (/Users/vinod/loan-engine/src/svc/loan-svc.ts:70:19)
+    at step (/Users/vinod/loan-engine/src/svc/loan-svc.ts:44:23)
+    at Object.next (/Users/vinod/loan-engine/src/svc/loan-svc.ts:25:53)
+    at fulfilled (/Users/vinod/loan-engine/src/svc/loan-svc.ts:16:58)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  [stack]: 'Error: INVALID_CUSTOMER\n' +
+    '    at LoanSvc.<anonymous> (/Users/vinod/loan-engine/src/svc/loan-svc.ts:70:19)\n' +
+    '    at step (/Users/vinod/loan-engine/src/svc/loan-svc.ts:44:23)\n' +
+    '    at Object.next (/Users/vinod/loan-engine/src/svc/loan-svc.ts:25:53)\n' +
+    '    at fulfilled (/Users/vinod/loan-engine/src/svc/loan-svc.ts:16:58)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  [message]: 'INVALID_CUSTOMER'
+}
+6/7/2023, 12:15:06 pm info: Listening on port '9090'
+6/7/2023, 12:15:20 pm debug: Processing request '{"method":"GET","url":"/api/loan/256/1d26d206-7b4a-46fc-9f30-d5c2a54df83c","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"d5ee30d8-60fd-49b7-809f-5eab6699f3e6","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 12:15:20 pm debug: Finding by ID { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' }
+6/7/2023, 12:15:20 pm debug: Finding with query {"_id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 12:15:26 pm debug: Processing request '{"method":"GET","url":"/api/loan/25/1d26d206-7b4a-46fc-9f30-d5c2a54df83c","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"a1c2286b-a716-4dfb-9d88-551c132835f1","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 12:15:26 pm debug: Finding by ID { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' }
+6/7/2023, 12:15:26 pm debug: Finding with query {"_id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 12:15:26 pm error: Error in processing request - Error: INVALID_CUSTOMER
+    at LoanSvc.<anonymous> (/Users/vinod/loan-engine/src/svc/loan-svc.ts:70:19)
+    at step (/Users/vinod/loan-engine/src/svc/loan-svc.ts:44:23)
+    at Object.next (/Users/vinod/loan-engine/src/svc/loan-svc.ts:25:53)
+    at fulfilled (/Users/vinod/loan-engine/src/svc/loan-svc.ts:16:58)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  [stack]: 'Error: INVALID_CUSTOMER\n' +
+    '    at LoanSvc.<anonymous> (/Users/vinod/loan-engine/src/svc/loan-svc.ts:70:19)\n' +
+    '    at step (/Users/vinod/loan-engine/src/svc/loan-svc.ts:44:23)\n' +
+    '    at Object.next (/Users/vinod/loan-engine/src/svc/loan-svc.ts:25:53)\n' +
+    '    at fulfilled (/Users/vinod/loan-engine/src/svc/loan-svc.ts:16:58)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  [message]: 'INVALID_CUSTOMER'
+}
+6/7/2023, 12:15:35 pm debug: Processing request '{"method":"GET","url":"/api/loan/256/1d26d206-7b4a-46fc-9f30-d5c2a54df83c","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"ad77f515-7cf8-46a1-b62e-7571c7659d39","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 12:15:35 pm debug: Finding by ID { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' }
+6/7/2023, 12:15:35 pm debug: Finding with query {"_id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 12:16:11 pm debug: Processing request '{"method":"GET","url":"/api/loan","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"b7f21d20-1ce2-4af9-8bde-1fc0b5c1e72d","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 12:16:11 pm debug: Finding all with skip 0 and limit 100
+6/7/2023, 12:16:11 pm debug: Finding with query {}
+6/7/2023, 12:16:11 pm debug: Processing request '{"method":"GET","url":"/api/loan","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"36425edd-36a6-4e17-a124-3a52e0b6917f","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 12:16:11 pm debug: Finding all with skip 0 and limit 100
+6/7/2023, 12:16:11 pm debug: Finding with query {}
+6/7/2023, 12:20:28 pm debug: Processing request '{"method":"GET","url":"/api/repayments","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"50a98d6f-3a81-4363-91bc-9de714eb975e","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 12:20:36 pm debug: Processing request '{"method":"GET","url":"/api/repayment","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"91127e2d-65b9-4df8-b758-f203297ae508","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 12:20:36 pm debug: Finding all with skip 0 and limit 100
+6/7/2023, 12:20:36 pm debug: Finding with query {}
+6/7/2023, 12:22:29 pm info: Listening on port '9090'
+6/7/2023, 12:23:04 pm info: Listening on port '9090'
+6/7/2023, 12:23:08 pm info: Listening on port '9090'
+6/7/2023, 12:29:31 pm debug: Processing request '{"method":"GET","url":"/api/repayment/1d26d206-7b4a-46fc-9f30-d5c2a54df83c/getLoanRepayments","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"f5303473-db55-491a-b338-b14827065fe0","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 12:29:31 pm debug: Finding with query {"laonId":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 12:30:37 pm info: Listening on port '9090'
+6/7/2023, 12:30:38 pm debug: Processing request '{"method":"GET","url":"/api/repayment/1d26d206-7b4a-46fc-9f30-d5c2a54df83c/getLoanRepayments","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"e3e43ffa-ff59-49dc-bb3c-fedaa047b069","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 12:30:38 pm debug: Finding with query {"loanId":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 12:36:07 pm debug: Processing request '{"method":"POST","url":"/api/repayment/repay","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"a5497bac-4a13-4934-95b2-fad861609715","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"149"},"body":{"loanId":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c","amount":"4000","userId":"256","id":"93c30685-fc0e-486c-803c-e4d8f47285ac"}}'
+6/7/2023, 12:36:07 pm error: Error in processing request - Error: INVALID_REPAYMENT
+    at RepaymentSvc.<anonymous> (/Users/vinod/loan-engine/src/svc/repayment-svc.ts:41:19)
+    at step (/Users/vinod/loan-engine/src/svc/repayment-svc.ts:44:23)
+    at Object.next (/Users/vinod/loan-engine/src/svc/repayment-svc.ts:25:53)
+    at /Users/vinod/loan-engine/src/svc/repayment-svc.ts:19:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/vinod/loan-engine/src/svc/repayment-svc.ts:15:12)
+    at RepaymentSvc.repay (/Users/vinod/loan-engine/src/svc/repayment-svc.ts:89:16)
+    at /Users/vinod/loan-engine/src/routes/repayment-router.ts:41:46
+    at step (/Users/vinod/loan-engine/src/routes/repayment-router.ts:33:23)
+    at Object.next (/Users/vinod/loan-engine/src/routes/repayment-router.ts:14:53) {
+  [stack]: 'Error: INVALID_REPAYMENT\n' +
+    '    at RepaymentSvc.<anonymous> (/Users/vinod/loan-engine/src/svc/repayment-svc.ts:41:19)\n' +
+    '    at step (/Users/vinod/loan-engine/src/svc/repayment-svc.ts:44:23)\n' +
+    '    at Object.next (/Users/vinod/loan-engine/src/svc/repayment-svc.ts:25:53)\n' +
+    '    at /Users/vinod/loan-engine/src/svc/repayment-svc.ts:19:71\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at __awaiter (/Users/vinod/loan-engine/src/svc/repayment-svc.ts:15:12)\n' +
+    '    at RepaymentSvc.repay (/Users/vinod/loan-engine/src/svc/repayment-svc.ts:89:16)\n' +
+    '    at /Users/vinod/loan-engine/src/routes/repayment-router.ts:41:46\n' +
+    '    at step (/Users/vinod/loan-engine/src/routes/repayment-router.ts:33:23)\n' +
+    '    at Object.next (/Users/vinod/loan-engine/src/routes/repayment-router.ts:14:53)',
+  [message]: 'INVALID_REPAYMENT'
+}
+6/7/2023, 12:38:09 pm debug: Processing request '{"method":"POST","url":"/api/repayment/repay","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"74bd6dbb-f516-4244-bc41-2410f7191844","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"158"},"body":{"loanId":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c","amount":"4000","userId":"256","repaymentId":"93c30685-fc0e-486c-803c-e4d8f47285ac"}}'
+6/7/2023, 12:38:09 pm debug: Finding by ID { _id: '93c30685-fc0e-486c-803c-e4d8f47285ac' }
+6/7/2023, 12:38:09 pm debug: Finding with query {"_id":"93c30685-fc0e-486c-803c-e4d8f47285ac"}
+6/7/2023, 12:38:09 pm debug: Finding by ID { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' }
+6/7/2023, 12:38:09 pm debug: Finding with query {"_id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 12:38:09 pm debug: Finding by ID { _id: '93c30685-fc0e-486c-803c-e4d8f47285ac' }
+6/7/2023, 12:38:09 pm debug: Finding with query {"_id":"93c30685-fc0e-486c-803c-e4d8f47285ac"}
+6/7/2023, 12:38:09 pm debug: Upserting with query { _id: '93c30685-fc0e-486c-803c-e4d8f47285ac' } for record {
+  amount: '3333.3333333333335',
+  createdAt: '2023-07-06T06:15:28.525Z',
+  loanId: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c',
+  scheduledPaymentDate: 1689228928525,
+  status: 'PAID',
+  updatedAt: '2023-07-06T07:08:09.957Z',
+  userId: '256'
+}
+6/7/2023, 12:38:09 pm info: Repayment updated with status: PENDING and id: 93c30685-fc0e-486c-803c-e4d8f47285ac
+6/7/2023, 12:38:09 pm debug: Finding with query {"loanId":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 12:38:31 pm debug: Processing request '{"method":"GET","url":"/api/repayment","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"27f29b39-4e76-4dd0-8001-95e82279bd6b","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 12:38:31 pm debug: Finding all with skip 0 and limit 100
+6/7/2023, 12:38:31 pm debug: Finding with query {}
+6/7/2023, 12:38:44 pm debug: Processing request '{"method":"GET","url":"/api/loan","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"8d87bc69-fdf3-493e-8019-893092ab4b43","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 12:38:44 pm debug: Finding all with skip 0 and limit 100
+6/7/2023, 12:38:44 pm debug: Finding with query {}
+6/7/2023, 12:38:45 pm debug: Processing request '{"method":"GET","url":"/api/loan","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"c5e74b40-c45e-4195-8898-f67846a4e77b","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 12:38:45 pm debug: Finding all with skip 0 and limit 100
+6/7/2023, 12:38:45 pm debug: Finding with query {}
+6/7/2023, 12:46:03 pm debug: Processing request '{"method":"POST","url":"/api/repayment/repay","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"e3b429b7-6235-47b5-8f39-bb5076639b9d","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"158"},"body":{"loanId":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c","amount":"4000","userId":"256","repaymentId":"bd761131-c939-40c6-9c00-06162fc4ead8"}}'
+6/7/2023, 12:46:03 pm debug: Finding by ID { _id: 'bd761131-c939-40c6-9c00-06162fc4ead8' }
+6/7/2023, 12:46:03 pm debug: Finding with query {"_id":"bd761131-c939-40c6-9c00-06162fc4ead8"}
+6/7/2023, 12:46:03 pm debug: Finding by ID { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' }
+6/7/2023, 12:46:03 pm debug: Finding with query {"_id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 12:46:03 pm debug: Finding by ID { _id: 'bd761131-c939-40c6-9c00-06162fc4ead8' }
+6/7/2023, 12:46:03 pm debug: Finding with query {"_id":"bd761131-c939-40c6-9c00-06162fc4ead8"}
+6/7/2023, 12:46:03 pm debug: Upserting with query { _id: 'bd761131-c939-40c6-9c00-06162fc4ead8' } for record {
+  amount: '3333.3333333333335',
+  createdAt: '2023-07-06T06:15:28.558Z',
+  loanId: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c',
+  scheduledPaymentDate: 1689833728558,
+  status: 'PAID',
+  updatedAt: '2023-07-06T07:16:03.838Z',
+  userId: '256'
+}
+6/7/2023, 12:46:03 pm info: Repayment updated with status: PENDING and id: bd761131-c939-40c6-9c00-06162fc4ead8
+6/7/2023, 12:46:03 pm debug: Finding with query {"loanId":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 12:46:11 pm debug: Processing request '{"method":"GET","url":"/api/loan/256/1d26d206-7b4a-46fc-9f30-d5c2a54df83c","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"949fdab9-3030-4737-aee6-c631531c8ef1","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 12:46:11 pm debug: Finding by ID { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' }
+6/7/2023, 12:46:11 pm debug: Finding with query {"_id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 12:46:19 pm debug: Processing request '{"method":"GET","url":"/api/repayment","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"ac00d215-bfee-4541-8287-a55b930f8ab1","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 12:46:19 pm debug: Finding all with skip 0 and limit 100
+6/7/2023, 12:46:19 pm debug: Finding with query {}
+6/7/2023, 12:46:35 pm debug: Processing request '{"method":"POST","url":"/api/repayment/repay","headers":{"content-type":"application/json","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"89bd9ca0-c86e-47ae-9086-d25b33237933","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"158"},"body":{"loanId":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c","amount":"4000","userId":"256","repaymentId":"23ff8d22-00dd-4988-9a36-6b201e518e9e"}}'
+6/7/2023, 12:46:35 pm debug: Finding by ID { _id: '23ff8d22-00dd-4988-9a36-6b201e518e9e' }
+6/7/2023, 12:46:35 pm debug: Finding with query {"_id":"23ff8d22-00dd-4988-9a36-6b201e518e9e"}
+6/7/2023, 12:46:35 pm debug: Finding by ID { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' }
+6/7/2023, 12:46:35 pm debug: Finding with query {"_id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 12:46:35 pm debug: Finding by ID { _id: '23ff8d22-00dd-4988-9a36-6b201e518e9e' }
+6/7/2023, 12:46:35 pm debug: Finding with query {"_id":"23ff8d22-00dd-4988-9a36-6b201e518e9e"}
+6/7/2023, 12:46:35 pm debug: Upserting with query { _id: '23ff8d22-00dd-4988-9a36-6b201e518e9e' } for record {
+  amount: '3333.3333333333335',
+  createdAt: '2023-07-06T06:15:28.563Z',
+  loanId: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c',
+  scheduledPaymentDate: 1690438528563,
+  status: 'PAID',
+  updatedAt: '2023-07-06T07:16:35.117Z',
+  userId: '256'
+}
+6/7/2023, 12:46:35 pm info: Repayment updated with status: PENDING and id: 23ff8d22-00dd-4988-9a36-6b201e518e9e
+6/7/2023, 12:46:35 pm debug: Finding with query {"loanId":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}
+6/7/2023, 12:46:35 pm debug: Upserting with query { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' } for record {
+  amount: '10000',
+  createdAt: '2023-07-06T06:15:28.477Z',
+  status: 'PAID',
+  tenure: '3',
+  updatedAt: '2023-07-06T07:16:35.122Z',
+  userId: '256'
+}
+6/7/2023, 12:46:38 pm debug: Processing request '{"method":"GET","url":"/api/repayment","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"bdb9d9d5-7e1a-450a-9e4b-b9da3612e906","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 12:46:38 pm debug: Finding all with skip 0 and limit 100
+6/7/2023, 12:46:38 pm debug: Finding with query {}
+6/7/2023, 12:46:43 pm debug: Processing request '{"method":"GET","url":"/api/loan/256/1d26d206-7b4a-46fc-9f30-d5c2a54df83c","headers":{"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"41e2c063-65b5-4ba7-9e26-bdf6283315ca","host":"localhost:9090","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},"body":{}}'
+6/7/2023, 12:46:43 pm debug: Finding by ID { _id: '1d26d206-7b4a-46fc-9f30-d5c2a54df83c' }
+6/7/2023, 12:46:43 pm debug: Finding with query {"_id":"1d26d206-7b4a-46fc-9f30-d5c2a54df83c"}

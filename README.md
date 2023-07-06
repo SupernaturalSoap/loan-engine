@@ -14,12 +14,12 @@
 ```
 LANG=en-IN
 TZ=Asia/Kolkata
-APP_NAME=event-engine
+APP_NAME=loan-engine
 APP_PORT=9090
 APP_LOGGER_DIR=.
 APP_LOGGER_LEVEL=debug
-APP_MONGO_URL=mongodb://localhost/event-engine
-APP_MONGO_DB_NAME=event-engine
+APP_MONGO_URL=mongodb://localhost/loan-engine
+APP_MONGO_DB_NAME=loan-engine
 NODE_ENV=development
 BASE_URL=http://localhost:9090
 ```
@@ -37,7 +37,7 @@ docker run -d \
 --name mongo \
 -p 27017:27017 \
 -v /Users/vinod/code/mongo:/data/db \
---network event \
+--network loan \
 mongo
 ```
 
@@ -48,56 +48,30 @@ mongo
 
 ### API Details
 ```
-API : Create Event
+API : Create Loan
 
-End point : /api/event
+End point : /api/loan
 
 Method : POST
 
 Parameters :  
 {
-    "name": "Order Viewed",
-    "description": "Whose order viewed",
-    "rules": {
-        "$schema": "http://json-schema.org/draft-07/schema#",
-        "type": "object",
-        "properties": {
-            "type": "object",
-            "properties": {
-                "product": {
-                "type": ["string"]
-                },
-                "price": {
-                "type": ["number"]
-                },
-                "category": {
-                "type": ["string"]
-                },
-                "currency": {
-                "type": ["string"]
-                }
-            }, 
-            "required": [
-            "product",
-            "price",
-            "category",
-            "currency"
-            ]
-        }
-    }
+    "userId": "256",
+    "amount": "10000",
+    "tenure": "3"
 }
 
 Response : 
 {
     "message": "Successful",
-    "data": "0a0ce469-4cea-465c-96a4-63b13257089c"
+    "data": "1d26d206-7b4a-46fc-9f30-d5c2a54df83c"
 }
 
 ---------------------------------------------------------
 
-API : Get All Events
+API : Get All Loans
 
-End Point : /api/event
+End Point : /api/loan
 
 Method : GET
 
@@ -106,91 +80,22 @@ Response :
     "message": "Successful",
     "data": [
         {
-            "createdAt": "2023-03-13T13:32:24.394Z",
-            "description": "Whose order viewed",
-            "name": "Order Viewed",
-            "rules": {
-                "$schema": "http://json-schema.org/draft-07/schema#",
-                "type": "object",
-                "properties": {
-                    "type": "object",
-                    "properties": {
-                        "product": {
-                            "type": [
-                                "string"
-                            ]
-                        },
-                        "price": {
-                            "type": [
-                                "number"
-                            ]
-                        },
-                        "currency": {
-                            "type": [
-                                "string"
-                            ]
-                        }
-                    },
-                    "required": [
-                        "product",
-                        "price",
-                        "currency"
-                    ]
-                }
-            },
-            "updatedAt": "2023-03-13T13:32:24.394Z",
-            "id": "4880604d-b058-484a-870f-43cbbf18734c"
-        },
-        {
-            "createdAt": "2023-03-13T13:39:32.928Z",
-            "description": "Whose order viewed",
-            "name": "Order Viewed Two",
-            "rules": {
-                "$schema": "http://json-schema.org/draft-07/schema#",
-                "type": "object",
-                "properties": {
-                    "type": "object",
-                    "properties": {
-                        "product": {
-                            "type": [
-                                "string"
-                            ]
-                        },
-                        "price": {
-                            "type": [
-                                "number"
-                            ]
-                        },
-                        "category": {
-                            "type": [
-                                "string"
-                            ]
-                        },
-                        "currency": {
-                            "type": [
-                                "string"
-                            ]
-                        }
-                    },
-                    "required": [
-                        "product",
-                        "price",
-                        "category",
-                        "currency"
-                    ]
-                }
-            },
-            "updatedAt": "2023-03-13T13:57:36.350Z",
-            "id": "0a0ce469-4cea-465c-96a4-63b13257089c"
-        },
+            "amount": "10000",
+            "createdAt": "2023-07-06T06:15:28.477Z",
+            "status": "APPROVED",
+            "tenure": "3",
+            "updatedAt": "2023-07-06T06:22:05.702Z",
+            "userId": "256",
+            "id": "1d26d206-7b4a-46fc-9f30-d5c2a54df83c"
+        }
     ]
 }
 
 ------------------------------------------------------------------------
 
-API : Get Event By Id
+API : Get User Loan By Id
 
-End Point : /api/event/4880604d-b058-484a-870f-43cbbf18734c
+End Point : api/loan/:userId/:loanId
 
 Method : GET
 
@@ -198,213 +103,167 @@ Response :
 {
     "message": "Sucessful",
     "data": {
-        "createdAt": "2023-03-13T13:32:24.394Z",
-        "description": "Whose order viewed",
-        "name": "Order Viewed",
-        "rules": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "type": "object",
-            "properties": {
-                "type": "object",
-                "properties": {
-                    "product": {
-                        "type": [
-                            "string"
-                        ]
-                    },
-                    "price": {
-                        "type": [
-                            "number"
-                        ]
-                    },
-                    "currency": {
-                        "type": [
-                            "string"
-                        ]
-                    }
-                },
-                "required": [
-                    "product",
-                    "price",
-                    "currency"
-                ]
-            }
-        },
-        "updatedAt": "2023-03-13T13:32:24.394Z",
-        "id": "4880604d-b058-484a-870f-43cbbf18734c"
+        "amount": "10000",
+        "createdAt": "2023-07-06T06:15:28.477Z",
+        "status": "PAID",
+        "tenure": "3",
+        "updatedAt": "2023-07-06T07:16:35.122Z",
+        "userId": "256",
+        "id": "1d26d206-7b4a-46fc-9f30-d5c2a54df83c"
+    }
+}
+
+-------------------------------------------------------------------------
+
+API : Update Loan
+
+End point : /api/loan
+
+Method : PATCH
+
+Parameters :  
+{
+    "amount": "10000",
+    "status": "APPROVED",
+    "tenure": "3",
+    "userId": "256",
+    "id": "1d26d206-7b4a-46fc-9f30-d5c2a54df83c"
+}
+
+Response : 
+{
+    "message": "Successful",
+    "data": {
+        "amount": "10000",
+        "createdAt": "2023-07-06T06:15:28.477Z",
+        "status": "APPROVED",
+        "tenure": "3",
+        "updatedAt": "2023-07-06T06:22:00.602Z",
+        "userId": "256",
+        "id": "1d26d206-7b4a-46fc-9f30-d5c2a54df83c"
     }
 }
 ```
 
-## Create Tracking Plan
-- The required Event Ids are provided to be included in the Tracking Plan.
+## Create Repayment
+- The Loan Id is to be provided in the Repayment.
 
 ### API Details
 ```
-API : Create Tracking Plan
+API : Get All Repayments
 
-End point : /api/trackingPlan
-
-Method : POST
-
-Parameters :
-{
-    "display_name": "Tracking Plan",
-    "description": "This Is Tracking Plan One",
-    "events": [ "4880604d-b058-484a-870f-43cbbf18734c", "0a0ce469-4cea-465c-96a4-63b13257089c" ]
-}
-
-Response :
-{
-    "message": "Successful",
-    "data": "b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0"
-}
-
--------------------------------------------------------
-
-API : Get all Tracking Plan
-
-End point : /api/trackingPlan
+End point : /api/repayment
 
 Method : GET
 
-Response :
 {
     "message": "Successful",
     "data": [
         {
-            "createdAt": "2023-03-13T13:41:28.788Z",
-            "description": "This Is First Tracking Plan",
-            "display_name": "Tracking Plan",
-            "events": [
-                "4880604d-b058-484a-870f-43cbbf18734c",
-                "0a0ce469-4cea-465c-96a4-63b13257089c"
-            ],
-            "updatedAt": "2023-03-13T14:02:29.069Z",
-            "id": "b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0"
+            "amount": "3333.3333333333335",
+            "createdAt": "2023-07-06T06:15:28.525Z",
+            "loanId": "1d26d206-7b4a-46fc-9f30-d5c2a54df83c",
+            "scheduledPaymentDate": 1689228928525,
+            "status": "PAID",
+            "updatedAt": "2023-07-06T07:08:09.957Z",
+            "userId": "256",
+            "id": "93c30685-fc0e-486c-803c-e4d8f47285ac"
         },
         {
-            "createdAt": "2023-03-14T13:53:45.083Z",
-            "description": "This Is Tracking Plan One",
-            "display_name": "Tracking Plan",
-            "events": [
-                "4880604d-b058-484a-870f-43cbbf18734c",
-                "0a0ce469-4cea-465c-96a4-63b13257089c"
-            ],
-            "updatedAt": "2023-03-14T13:53:45.083Z",
-            "id": "5640f8ac-b0a8-4f1a-bd6d-04498ccf7f52"
+            "amount": "3333.3333333333335",
+            "createdAt": "2023-07-06T06:15:28.558Z",
+            "loanId": "1d26d206-7b4a-46fc-9f30-d5c2a54df83c",
+            "scheduledPaymentDate": 1689833728558,
+            "status": "PAID",
+            "updatedAt": "2023-07-06T07:16:03.838Z",
+            "userId": "256",
+            "id": "bd761131-c939-40c6-9c00-06162fc4ead8"
         },
         {
-            "createdAt": "2023-03-14T13:54:33.879Z",
-            "description": "This Is Tracking Plan One",
-            "display_name": "Tracking Plan",
-            "events": [
-                "4880604d-b058-484a-870f-43cbbf18734c",
-                "0a0ce469-4cea-465c-96a4-63b13257089c"
-            ],
-            "updatedAt": "2023-03-14T13:54:33.879Z",
-            "id": "6e8cda9e-c102-464b-9cb4-b6d0993d1d18"
+            "amount": "3333.3333333333335",
+            "createdAt": "2023-07-06T06:15:28.563Z",
+            "loanId": "1d26d206-7b4a-46fc-9f30-d5c2a54df83c",
+            "scheduledPaymentDate": 1690438528563,
+            "status": "PAID",
+            "updatedAt": "2023-07-06T07:16:35.117Z",
+            "userId": "256",
+            "id": "23ff8d22-00dd-4988-9a36-6b201e518e9e"
         }
     ]
 }
 
 ----------------------------------------------------------
 
-API : Get Tracking Plan By Id
+API : Get Loan Repayments
 
-End point : /api/trackingPlan/b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0
+End point : /api/repayment/:loanId/getLoanRepayments
 
 Method : GET
 
 Response : 
 {
-    "message": "Sucessful",
+    "message": "Successful",
+    "data": [
+        {
+            "amount": "3333.3333333333335",
+            "createdAt": "2023-07-06T06:15:28.525Z",
+            "loanId": "1d26d206-7b4a-46fc-9f30-d5c2a54df83c",
+            "scheduledPaymentDate": 1689228928525,
+            "status": "PENDING",
+            "updatedAt": "2023-07-06T06:15:28.525Z",
+            "userId": "256",
+            "id": "93c30685-fc0e-486c-803c-e4d8f47285ac"
+        },
+        {
+            "amount": "3333.3333333333335",
+            "createdAt": "2023-07-06T06:15:28.558Z",
+            "loanId": "1d26d206-7b4a-46fc-9f30-d5c2a54df83c",
+            "scheduledPaymentDate": 1689833728558,
+            "status": "PENDING",
+            "updatedAt": "2023-07-06T06:15:28.558Z",
+            "userId": "256",
+            "id": "bd761131-c939-40c6-9c00-06162fc4ead8"
+        },
+        {
+            "amount": "3333.3333333333335",
+            "createdAt": "2023-07-06T06:15:28.563Z",
+            "loanId": "1d26d206-7b4a-46fc-9f30-d5c2a54df83c",
+            "scheduledPaymentDate": 1690438528563,
+            "status": "PENDING",
+            "updatedAt": "2023-07-06T06:15:28.563Z",
+            "userId": "256",
+            "id": "23ff8d22-00dd-4988-9a36-6b201e518e9e"
+        }
+    ]
+}
+
+---------------------------------------------------------------
+
+API : Repayment Pay
+
+End point : /api/repayment/repay
+
+Method : POST
+
+Parameters :  
+{
+    "loanId": "1d26d206-7b4a-46fc-9f30-d5c2a54df83c",
+    "amount": "4000",
+    "userId": "256",
+    "repaymentId": "23ff8d22-00dd-4988-9a36-6b201e518e9e"
+}
+
+Response : 
+{
+    "message": "Successful",
     "data": {
-        "createdAt": "2023-03-13T13:41:28.788Z",
-        "description": "This Is First Tracking Plan",
-        "display_name": "Tracking Plan",
-        "events": [
-            {
-                "createdAt": "2023-03-13T13:32:24.394Z",
-                "description": "Whose order viewed",
-                "name": "Order Viewed",
-                "rules": {
-                    "$schema": "http://json-schema.org/draft-07/schema#",
-                    "type": "object",
-                    "properties": {
-                        "type": "object",
-                        "properties": {
-                            "product": {
-                                "type": [
-                                    "string"
-                                ]
-                            },
-                            "price": {
-                                "type": [
-                                    "number"
-                                ]
-                            },
-                            "currency": {
-                                "type": [
-                                    "string"
-                                ]
-                            }
-                        },
-                        "required": [
-                            "product",
-                            "price",
-                            "currency"
-                        ]
-                    }
-                },
-                "updatedAt": "2023-03-13T13:32:24.394Z",
-                "id": "4880604d-b058-484a-870f-43cbbf18734c"
-            },
-            {
-                "createdAt": "2023-03-13T13:39:32.928Z",
-                "description": "Whose order viewed",
-                "name": "Order Viewed Two",
-                "rules": {
-                    "$schema": "http://json-schema.org/draft-07/schema#",
-                    "type": "object",
-                    "properties": {
-                        "type": "object",
-                        "properties": {
-                            "product": {
-                                "type": [
-                                    "string"
-                                ]
-                            },
-                            "price": {
-                                "type": [
-                                    "number"
-                                ]
-                            },
-                            "category": {
-                                "type": [
-                                    "string"
-                                ]
-                            },
-                            "currency": {
-                                "type": [
-                                    "string"
-                                ]
-                            }
-                        },
-                        "required": [
-                            "product",
-                            "price",
-                            "category",
-                            "currency"
-                        ]
-                    }
-                },
-                "updatedAt": "2023-03-13T13:57:36.350Z",
-                "id": "0a0ce469-4cea-465c-96a4-63b13257089c"
-            }
-        ],
-        "updatedAt": "2023-03-13T14:02:29.069Z",
-        "id": "b097c00c-8e2e-4eeb-8b6a-2d5beb0568a0"
+        "amount": "3333.3333333333335",
+        "createdAt": "2023-07-06T06:15:28.563Z",
+        "loanId": "1d26d206-7b4a-46fc-9f30-d5c2a54df83c",
+        "scheduledPaymentDate": 1690438528563,
+        "status": "PAID",
+        "updatedAt": "2023-07-06T06:15:28.563Z",
+        "userId": "256"
     }
 }
 ```

@@ -28,7 +28,7 @@ export default abstract class MongoDao<ID, T> implements Dao<ID, T> {
         return MongoDao.db.collection(this.name);
     }
 
-    private async find(query: Filter<any>, options?: any): Promise<T[]> {
+    public async find(query: Filter<any>, options?: any): Promise<T[]> {
         logger.debug('Finding with query %s', JSON.stringify(query));
 
         const records: Document[] = await this.coll().find(query, options).toArray();

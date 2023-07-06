@@ -22,6 +22,9 @@ const myFormat = printf(({ level, message, timestamp }) => {
     return `${timestamp} ${level}: ${message}`;
 });
 
+console.log('---------');
+console.log(process.env.APP_LOGGER_DIR);
+console.log(process.env.APP_NAME);
 const logger = createLogger({
     level: config.LOGGER_LEVEL,
     format: combine(splat(), timestamp({ format: ts }), myFormat),

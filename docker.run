@@ -1,20 +1,20 @@
 #! /bin/sh
 
 echo "Building image..."
-docker build --build-arg GITHIB_TOKEN=${GITHUB_TOKEN} -t event-engine:v1
+docker build --build-arg GITHIB_TOKEN=${GITHUB_TOKEN} -t loan-engine:v1
 
 echo "Creating network if not exist..."
-docker network inspect event-net >/dev/null 2>&1 || docker network create event-net
+docker network inspect loan-net >/dev/null 2>&1 || docker network create loan-net
 
 echo "Removing container if running..."
-docker rm -f event-engine >/dev/null 2>&1
+docker rm -f loan-engine >/dev/null 2>&1
 
 echo "Starting container..."
 docker run -d \
-   --name event-engine \
+   --name loan-engine \
    -p 9090:9090 \
    -v $(pwd):/var/log \
    --add-host=host.docker.internal:host-gateway \
    --env-file .env \
-   --network event \
-   event-engine
+   --network loan \
+   loan-engine
